@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D42D02612ECEC0041D02F /* TouchDebugView.m */; };
+		B6CF856E261C05D600E00CDB /* OCMemoryManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF856C261C05D600E00CDB /* OCMemoryManagementViewController.m */; };
+		B6CF856F261C05D600E00CDB /* OCMemoryManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CF856D261C05D600E00CDB /* OCMemoryManagementViewController.xib */; };
+		B6CF8575261C09A400E00CDB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF8574261C09A400E00CDB /* Person.m */; };
+		B6CF857C261C6B2C00E00CDB /* OCStructViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF857A261C6B2B00E00CDB /* OCStructViewController.m */; };
+		B6CF857D261C6B2C00E00CDB /* OCStructViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CF857B261C6B2B00E00CDB /* OCStructViewController.xib */; };
 		B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EC18AA261177AB008A980E /* RunloopSample.m */; };
 		B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5605C25F0C7DD00AEF26A /* AppDelegate.m */; };
 		B6F5606025F0C7DD00AEF26A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5605F25F0C7DD00AEF26A /* SceneDelegate.m */; };
@@ -25,6 +30,14 @@
 /* Begin PBXFileReference section */
 		B65D42CF2612ECEC0041D02F /* TouchDebugView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDebugView.h; sourceTree = "<group>"; };
 		B65D42D02612ECEC0041D02F /* TouchDebugView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDebugView.m; sourceTree = "<group>"; };
+		B6CF856B261C05D600E00CDB /* OCMemoryManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMemoryManagementViewController.h; sourceTree = "<group>"; };
+		B6CF856C261C05D600E00CDB /* OCMemoryManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMemoryManagementViewController.m; sourceTree = "<group>"; };
+		B6CF856D261C05D600E00CDB /* OCMemoryManagementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCMemoryManagementViewController.xib; sourceTree = "<group>"; };
+		B6CF8573261C09A400E00CDB /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		B6CF8574261C09A400E00CDB /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		B6CF8579261C6B2B00E00CDB /* OCStructViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCStructViewController.h; sourceTree = "<group>"; };
+		B6CF857A261C6B2B00E00CDB /* OCStructViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCStructViewController.m; sourceTree = "<group>"; };
+		B6CF857B261C6B2B00E00CDB /* OCStructViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCStructViewController.xib; sourceTree = "<group>"; };
 		B6EC18A9261177AB008A980E /* RunloopSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopSample.h; sourceTree = "<group>"; };
 		B6EC18AA261177AB008A980E /* RunloopSample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopSample.m; sourceTree = "<group>"; };
 		B6F5605825F0C7DD00AEF26A /* QuickExampleOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickExampleOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,16 +76,30 @@
 		B6CF8568261C013900E00CDB /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B6CF8569261C014C00E00CDB /* Memory */,
+				B6CF8569261C014C00E00CDB /* OCMemoryManagement */,
+				B6CF8578261C6B0B00E00CDB /* OCStruct */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		B6CF8569261C014C00E00CDB /* Memory */ = {
+		B6CF8569261C014C00E00CDB /* OCMemoryManagement */ = {
 			isa = PBXGroup;
 			children = (
+				B6CF856B261C05D600E00CDB /* OCMemoryManagementViewController.h */,
+				B6CF856C261C05D600E00CDB /* OCMemoryManagementViewController.m */,
+				B6CF856D261C05D600E00CDB /* OCMemoryManagementViewController.xib */,
 			);
-			path = Memory;
+			path = OCMemoryManagement;
+			sourceTree = "<group>";
+		};
+		B6CF8578261C6B0B00E00CDB /* OCStruct */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF8579261C6B2B00E00CDB /* OCStructViewController.h */,
+				B6CF857A261C6B2B00E00CDB /* OCStructViewController.m */,
+				B6CF857B261C6B2B00E00CDB /* OCStructViewController.xib */,
+			);
+			path = OCStruct;
 			sourceTree = "<group>";
 		};
 		B6EC18A826117788008A980E /* Runloop */ = {
@@ -158,6 +185,8 @@
 			children = (
 				B6F5608925F7240D00AEF26A /* ToolUtils.h */,
 				B6F5608A25F7240D00AEF26A /* ToolUtils.m */,
+				B6CF8573261C09A400E00CDB /* Person.h */,
+				B6CF8574261C09A400E00CDB /* Person.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -218,7 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6CF856F261C05D600E00CDB /* OCMemoryManagementViewController.xib in Resources */,
 				B6F5606B25F0C7DF00AEF26A /* LaunchScreen.storyboard in Resources */,
+				B6CF857D261C6B2C00E00CDB /* OCStructViewController.xib in Resources */,
 				B6F5606825F0C7DF00AEF26A /* Assets.xcassets in Resources */,
 				B6F5606625F0C7DD00AEF26A /* Main.storyboard in Resources */,
 			);
@@ -235,7 +266,10 @@
 				B6F5608425F5FEBE00AEF26A /* MemorySample.m in Sources */,
 				B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */,
 				B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */,
+				B6CF856E261C05D600E00CDB /* OCMemoryManagementViewController.m in Sources */,
+				B6CF857C261C6B2C00E00CDB /* OCStructViewController.m in Sources */,
 				B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */,
+				B6CF8575261C09A400E00CDB /* Person.m in Sources */,
 				B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */,
 				B6F5606E25F0C7DF00AEF26A /* main.m in Sources */,
 				B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */,

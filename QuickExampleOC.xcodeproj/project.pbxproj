@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D42D02612ECEC0041D02F /* TouchDebugView.m */; };
+		B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EC18AA261177AB008A980E /* RunloopSample.m */; };
 		B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5605C25F0C7DD00AEF26A /* AppDelegate.m */; };
 		B6F5606025F0C7DD00AEF26A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5605F25F0C7DD00AEF26A /* SceneDelegate.m */; };
 		B6F5606325F0C7DD00AEF26A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5606225F0C7DD00AEF26A /* ViewController.m */; };
@@ -14,9 +16,17 @@
 		B6F5606825F0C7DF00AEF26A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F5606725F0C7DF00AEF26A /* Assets.xcassets */; };
 		B6F5606B25F0C7DF00AEF26A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F5606925F0C7DF00AEF26A /* LaunchScreen.storyboard */; };
 		B6F5606E25F0C7DF00AEF26A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5606D25F0C7DF00AEF26A /* main.m */; };
+		B6F5607925F0C84300AEF26A /* LRUMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5607825F0C84300AEF26A /* LRUMutableDictionary.m */; };
+		B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5607E25F0DCDD00AEF26A /* StartSampleManager.m */; };
+		B6F5608425F5FEBE00AEF26A /* MemorySample.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5608325F5FEBD00AEF26A /* MemorySample.m */; };
+		B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5608A25F7240D00AEF26A /* ToolUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B65D42CF2612ECEC0041D02F /* TouchDebugView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDebugView.h; sourceTree = "<group>"; };
+		B65D42D02612ECEC0041D02F /* TouchDebugView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDebugView.m; sourceTree = "<group>"; };
+		B6EC18A9261177AB008A980E /* RunloopSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopSample.h; sourceTree = "<group>"; };
+		B6EC18AA261177AB008A980E /* RunloopSample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopSample.m; sourceTree = "<group>"; };
 		B6F5605825F0C7DD00AEF26A /* QuickExampleOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickExampleOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F5605B25F0C7DD00AEF26A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6F5605C25F0C7DD00AEF26A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +39,14 @@
 		B6F5606A25F0C7DF00AEF26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6F5606C25F0C7DF00AEF26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6F5606D25F0C7DF00AEF26A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6F5607725F0C84300AEF26A /* LRUMutableDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LRUMutableDictionary.h; sourceTree = "<group>"; };
+		B6F5607825F0C84300AEF26A /* LRUMutableDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRUMutableDictionary.m; sourceTree = "<group>"; };
+		B6F5607D25F0DCDC00AEF26A /* StartSampleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartSampleManager.h; sourceTree = "<group>"; };
+		B6F5607E25F0DCDD00AEF26A /* StartSampleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartSampleManager.m; sourceTree = "<group>"; };
+		B6F5608225F5FEBD00AEF26A /* MemorySample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemorySample.h; sourceTree = "<group>"; };
+		B6F5608325F5FEBD00AEF26A /* MemorySample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemorySample.m; sourceTree = "<group>"; };
+		B6F5608925F7240D00AEF26A /* ToolUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolUtils.h; sourceTree = "<group>"; };
+		B6F5608A25F7240D00AEF26A /* ToolUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +60,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6CF8568261C013900E00CDB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF8569261C014C00E00CDB /* Memory */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B6CF8569261C014C00E00CDB /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		B6EC18A826117788008A980E /* Runloop */ = {
+			isa = PBXGroup;
+			children = (
+				B6EC18A9261177AB008A980E /* RunloopSample.h */,
+				B6EC18AA261177AB008A980E /* RunloopSample.m */,
+			);
+			path = Runloop;
+			sourceTree = "<group>";
+		};
 		B6F5604F25F0C7DD00AEF26A = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +103,12 @@
 		B6F5605A25F0C7DD00AEF26A /* QuickExampleOC */ = {
 			isa = PBXGroup;
 			children = (
-				B6F5605B25F0C7DD00AEF26A /* AppDelegate.h */,
-				B6F5605C25F0C7DD00AEF26A /* AppDelegate.m */,
-				B6F5605E25F0C7DD00AEF26A /* SceneDelegate.h */,
-				B6F5605F25F0C7DD00AEF26A /* SceneDelegate.m */,
-				B6F5606125F0C7DD00AEF26A /* ViewController.h */,
-				B6F5606225F0C7DD00AEF26A /* ViewController.m */,
+				B6CF8568261C013900E00CDB /* Features */,
+				B6EC18A826117788008A980E /* Runloop */,
+				B6F5608825F723E600AEF26A /* Utils */,
+				B6F5608125F5FEA800AEF26A /* Memory */,
+				B6F5607625F0C80C00AEF26A /* LRU */,
+				B6F5607525F0C7EE00AEF26A /* Main */,
 				B6F5606425F0C7DD00AEF26A /* Main.storyboard */,
 				B6F5606725F0C7DF00AEF26A /* Assets.xcassets */,
 				B6F5606925F0C7DF00AEF26A /* LaunchScreen.storyboard */,
@@ -74,6 +116,50 @@
 				B6F5606D25F0C7DF00AEF26A /* main.m */,
 			);
 			path = QuickExampleOC;
+			sourceTree = "<group>";
+		};
+		B6F5607525F0C7EE00AEF26A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B6F5605B25F0C7DD00AEF26A /* AppDelegate.h */,
+				B6F5605C25F0C7DD00AEF26A /* AppDelegate.m */,
+				B6F5605E25F0C7DD00AEF26A /* SceneDelegate.h */,
+				B6F5605F25F0C7DD00AEF26A /* SceneDelegate.m */,
+				B6F5606125F0C7DD00AEF26A /* ViewController.h */,
+				B6F5606225F0C7DD00AEF26A /* ViewController.m */,
+				B65D42CF2612ECEC0041D02F /* TouchDebugView.h */,
+				B65D42D02612ECEC0041D02F /* TouchDebugView.m */,
+				B6F5607D25F0DCDC00AEF26A /* StartSampleManager.h */,
+				B6F5607E25F0DCDD00AEF26A /* StartSampleManager.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B6F5607625F0C80C00AEF26A /* LRU */ = {
+			isa = PBXGroup;
+			children = (
+				B6F5607725F0C84300AEF26A /* LRUMutableDictionary.h */,
+				B6F5607825F0C84300AEF26A /* LRUMutableDictionary.m */,
+			);
+			path = LRU;
+			sourceTree = "<group>";
+		};
+		B6F5608125F5FEA800AEF26A /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				B6F5608225F5FEBD00AEF26A /* MemorySample.h */,
+				B6F5608325F5FEBD00AEF26A /* MemorySample.m */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		B6F5608825F723E600AEF26A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B6F5608925F7240D00AEF26A /* ToolUtils.h */,
+				B6F5608A25F7240D00AEF26A /* ToolUtils.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +232,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F5606325F0C7DD00AEF26A /* ViewController.m in Sources */,
+				B6F5608425F5FEBE00AEF26A /* MemorySample.m in Sources */,
+				B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */,
 				B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */,
+				B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */,
+				B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */,
 				B6F5606E25F0C7DF00AEF26A /* main.m in Sources */,
+				B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */,
+				B6F5607925F0C84300AEF26A /* LRUMutableDictionary.m in Sources */,
 				B6F5606025F0C7DD00AEF26A /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +386,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X27Y8T4R4;
 				INFOPLIST_FILE = QuickExampleOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X27Y8T4R4;
 				INFOPLIST_FILE = QuickExampleOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

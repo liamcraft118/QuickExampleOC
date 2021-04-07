@@ -10,6 +10,7 @@
 #import "TouchDebugView.h"
 #import "OCMemoryManagementViewController.h"
 #import "OCStructViewController.h"
+#import "OCMessageViewController.h"
 
 @interface ViewController ()
 
@@ -41,8 +42,8 @@
 
     [self.view addSubview:tableView];
     
-    _dataSources = @[@"Memory", @"OCStruct"];
-    _viewControllers = @[OCMemoryManagementViewController.self, OCStructViewController.self];
+    _dataSources = @[@"Memory", @"OCStruct", @"OCMessage"];
+    _viewControllers = @[OCMemoryManagementViewController.self, OCStructViewController.self, OCMessageViewController.self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

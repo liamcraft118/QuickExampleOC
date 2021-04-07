@@ -25,6 +25,8 @@
 		B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5607E25F0DCDD00AEF26A /* StartSampleManager.m */; };
 		B6F5608425F5FEBE00AEF26A /* MemorySample.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5608325F5FEBD00AEF26A /* MemorySample.m */; };
 		B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5608A25F7240D00AEF26A /* ToolUtils.m */; };
+		B6FE5FFD261DB781001A8707 /* OCMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FE5FFB261DB781001A8707 /* OCMessageViewController.m */; };
+		B6FE5FFE261DB781001A8707 /* OCMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FE5FFC261DB781001A8707 /* OCMessageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,9 @@
 		B6F5608325F5FEBD00AEF26A /* MemorySample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemorySample.m; sourceTree = "<group>"; };
 		B6F5608925F7240D00AEF26A /* ToolUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolUtils.h; sourceTree = "<group>"; };
 		B6F5608A25F7240D00AEF26A /* ToolUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolUtils.m; sourceTree = "<group>"; };
+		B6FE5FFA261DB781001A8707 /* OCMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMessageViewController.h; sourceTree = "<group>"; };
+		B6FE5FFB261DB781001A8707 /* OCMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMessageViewController.m; sourceTree = "<group>"; };
+		B6FE5FFC261DB781001A8707 /* OCMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCMessageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +81,9 @@
 		B6CF8568261C013900E00CDB /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B6CF8569261C014C00E00CDB /* OCMemoryManagement */,
+				B6FE5FF9261DB762001A8707 /* OCMessage */,
 				B6CF8578261C6B0B00E00CDB /* OCStruct */,
+				B6CF8569261C014C00E00CDB /* OCMemoryManagement */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -191,6 +197,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		B6FE5FF9261DB762001A8707 /* OCMessage */ = {
+			isa = PBXGroup;
+			children = (
+				B6FE5FFA261DB781001A8707 /* OCMessageViewController.h */,
+				B6FE5FFB261DB781001A8707 /* OCMessageViewController.m */,
+				B6FE5FFC261DB781001A8707 /* OCMessageViewController.xib */,
+			);
+			path = OCMessage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,6 +265,7 @@
 			files = (
 				B6CF856F261C05D600E00CDB /* OCMemoryManagementViewController.xib in Resources */,
 				B6F5606B25F0C7DF00AEF26A /* LaunchScreen.storyboard in Resources */,
+				B6FE5FFE261DB781001A8707 /* OCMessageViewController.xib in Resources */,
 				B6CF857D261C6B2C00E00CDB /* OCStructViewController.xib in Resources */,
 				B6F5606825F0C7DF00AEF26A /* Assets.xcassets in Resources */,
 				B6F5606625F0C7DD00AEF26A /* Main.storyboard in Resources */,
@@ -270,6 +287,7 @@
 				B6CF857C261C6B2C00E00CDB /* OCStructViewController.m in Sources */,
 				B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */,
 				B6CF8575261C09A400E00CDB /* Person.m in Sources */,
+				B6FE5FFD261DB781001A8707 /* OCMessageViewController.m in Sources */,
 				B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */,
 				B6F5606E25F0C7DF00AEF26A /* main.m in Sources */,
 				B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */,

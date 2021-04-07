@@ -26,6 +26,12 @@
 
 @end
 
+/**
+ KVO底层实现
+ KVC底层实现
+ https://juejin.cn/post/6844903747680731150
+ */
+
 @interface KVCKVOViewController ()
 
 @end

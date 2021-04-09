@@ -11,6 +11,11 @@
  OC类的结构
  OC的结构涉及到c语言的一系列代码，这里进行一个简单地了解
  
+ objc_object的isa指向objc_class，objc_class提供了这个实例需要实例方法、变量等等
+ objc_class的isa指向MetaClass（本质上也是objc_class），MetaClass提供这个类的类方法等
+ MetaClass的isa指向RootMetaClass，RootMetaClass的super_class指向NSObject
+ NSObject(即root objc_class)的super_class指向nil
+ 
  参考：https://juejin.cn/post/6844904055047716878
  
 */

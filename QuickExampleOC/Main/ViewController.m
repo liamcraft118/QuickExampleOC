@@ -11,6 +11,12 @@
 #import "OCMemoryManagementViewController.h"
 #import "OCStructViewController.h"
 #import "OCMessageViewController.h"
+#import "KVCKVOViewController.h"
+#import "OCRuntimeViewController.h"
+#import "OCCategoryViewController.h"
+#import "OCDeallocViewController.h"
+#import "OCRetainCycleViewController.h"
+#import "CCUIViewAndCALayerViewController.h"
 
 @interface ViewController ()
 
@@ -42,8 +48,10 @@
 
     [self.view addSubview:tableView];
     
-    _dataSources = @[@"Memory", @"OCStruct", @"OCMessage"];
-    _viewControllers = @[OCMemoryManagementViewController.self, OCStructViewController.self, OCMessageViewController.self];
+    _dataSources = @[@"Memory", @"OCStruct", @"OCMessage", @"KVO KVC", @"OCRuntime", @"OCCategory", @"OCDealloc", @"OCRetainCycle", @"CCUIViewAndCALayer"];
+    _viewControllers = @[OCMemoryManagementViewController.self, OCStructViewController.self, OCMessageViewController.self, KVCKVOViewController.self,
+                         OCRuntimeViewController.self, OCCategoryViewController.self, OCDeallocViewController.self,
+                         OCRetainCycleViewController.self, CCUIViewAndCALayerViewController.self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -19,6 +19,8 @@
 		B60DA08A261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60DA088261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib */; };
 		B60DA08F261EEF4500DE466E /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B60DA08E261EEF4500DE466E /* MyView.m */; };
 		B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D42D02612ECEC0041D02F /* TouchDebugView.m */; };
+		B6AE34252624804C00830937 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE34232624804C00830937 /* AlgorithmViewController.m */; };
+		B6AE34262624804C00830937 /* AlgorithmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6AE34242624804C00830937 /* AlgorithmViewController.xib */; };
 		B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C51455261DF4CC005A2264 /* KVCKVOViewController.m */; };
 		B6C51458261DF4CC005A2264 /* KVCKVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C51456261DF4CC005A2264 /* KVCKVOViewController.xib */; };
 		B6CF856E261C05D600E00CDB /* OCMemoryManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF856C261C05D600E00CDB /* OCMemoryManagementViewController.m */; };
@@ -66,6 +68,9 @@
 		B60DA08E261EEF4500DE466E /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		B65D42CF2612ECEC0041D02F /* TouchDebugView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDebugView.h; sourceTree = "<group>"; };
 		B65D42D02612ECEC0041D02F /* TouchDebugView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDebugView.m; sourceTree = "<group>"; };
+		B6AE34222624804C00830937 /* AlgorithmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmViewController.h; sourceTree = "<group>"; };
+		B6AE34232624804C00830937 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
+		B6AE34242624804C00830937 /* AlgorithmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlgorithmViewController.xib; sourceTree = "<group>"; };
 		B6C51454261DF4CC005A2264 /* KVCKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCKVOViewController.h; sourceTree = "<group>"; };
 		B6C51455261DF4CC005A2264 /* KVCKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCKVOViewController.m; sourceTree = "<group>"; };
 		B6C51456261DF4CC005A2264 /* KVCKVOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KVCKVOViewController.xib; sourceTree = "<group>"; };
@@ -161,6 +166,16 @@
 				B60DA08E261EEF4500DE466E /* MyView.m */,
 			);
 			path = CCUIViewAndCALayer;
+			sourceTree = "<group>";
+		};
+		B6AE34212624802900830937 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE34222624804C00830937 /* AlgorithmViewController.h */,
+				B6AE34232624804C00830937 /* AlgorithmViewController.m */,
+				B6AE34242624804C00830937 /* AlgorithmViewController.xib */,
+			);
+			path = Algorithm;
 			sourceTree = "<group>";
 		};
 		B6C51453261DF49A005A2264 /* KVC-KVO */ = {
@@ -259,6 +274,7 @@
 		B6F5605A25F0C7DD00AEF26A /* QuickExampleOC */ = {
 			isa = PBXGroup;
 			children = (
+				B6AE34212624802900830937 /* Algorithm */,
 				B6CF8568261C013900E00CDB /* Features */,
 				B6EC18A826117788008A980E /* Runloop */,
 				B6F5608825F723E600AEF26A /* Utils */,
@@ -400,6 +416,7 @@
 				B60DA074261ECFC500DE466E /* OCDeallocViewController.xib in Resources */,
 				B60DA05F261EA1FD00DE466E /* OCRuntimeViewController.xib in Resources */,
 				B60DA08A261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib in Resources */,
+				B6AE34262624804C00830937 /* AlgorithmViewController.xib in Resources */,
 				B6F5606B25F0C7DF00AEF26A /* LaunchScreen.storyboard in Resources */,
 				B60DA083261EDA7F00DE466E /* OCRetainCycleViewController.xib in Resources */,
 				B6FE5FFE261DB781001A8707 /* OCMessageViewController.xib in Resources */,
@@ -430,6 +447,7 @@
 				B60DA089261EDAAA00DE466E /* CCUIViewAndCALayerViewController.m in Sources */,
 				B6CF856E261C05D600E00CDB /* OCMemoryManagementViewController.m in Sources */,
 				B6CF857C261C6B2C00E00CDB /* OCStructViewController.m in Sources */,
+				B6AE34252624804C00830937 /* AlgorithmViewController.m in Sources */,
 				B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */,
 				B6CF8575261C09A400E00CDB /* Person.m in Sources */,
 				B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */,

@@ -32,6 +32,9 @@
 		B6DD4ECB26241D75006F6208 /* OCCoreAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6DD4EC926241D74006F6208 /* OCCoreAnimationViewController.xib */; };
 		B6DD4ED226242362006F6208 /* OCGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD4ED026242362006F6208 /* OCGCDViewController.m */; };
 		B6DD4ED326242362006F6208 /* OCGCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6DD4ED126242362006F6208 /* OCGCDViewController.xib */; };
+		B6DD4ED9262530F4006F6208 /* QuestionAndAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD4ED8262530F4006F6208 /* QuestionAndAnswer.m */; };
+		B6DD4EE0262544E2006F6208 /* OCLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD4EDE262544E1006F6208 /* OCLockViewController.m */; };
+		B6DD4EE1262544E2006F6208 /* OCLockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6DD4EDF262544E1006F6208 /* OCLockViewController.xib */; };
 		B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EC18AA261177AB008A980E /* RunloopSample.m */; };
 		B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5605C25F0C7DD00AEF26A /* AppDelegate.m */; };
 		B6F5606025F0C7DD00AEF26A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F5605F25F0C7DD00AEF26A /* SceneDelegate.m */; };
@@ -88,6 +91,10 @@
 		B6DD4ECF26242362006F6208 /* OCGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCGCDViewController.h; sourceTree = "<group>"; };
 		B6DD4ED026242362006F6208 /* OCGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGCDViewController.m; sourceTree = "<group>"; };
 		B6DD4ED126242362006F6208 /* OCGCDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCGCDViewController.xib; sourceTree = "<group>"; };
+		B6DD4ED8262530F4006F6208 /* QuestionAndAnswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionAndAnswer.m; sourceTree = "<group>"; };
+		B6DD4EDD262544E1006F6208 /* OCLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLockViewController.h; sourceTree = "<group>"; };
+		B6DD4EDE262544E1006F6208 /* OCLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCLockViewController.m; sourceTree = "<group>"; };
+		B6DD4EDF262544E1006F6208 /* OCLockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCLockViewController.xib; sourceTree = "<group>"; };
 		B6EC18A9261177AB008A980E /* RunloopSample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopSample.h; sourceTree = "<group>"; };
 		B6EC18AA261177AB008A980E /* RunloopSample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopSample.m; sourceTree = "<group>"; };
 		B6F5605825F0C7DD00AEF26A /* QuickExampleOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickExampleOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +198,7 @@
 		B6CF8568261C013900E00CDB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B6DD4EE4262544E9006F6208 /* OCLock */,
 				B6DD4ECE26242352006F6208 /* OCGCD */,
 				B6DD4ECD26241D79006F6208 /* OCCoreAnimation */,
 				B60DA085261EDA9100DE466E /* CCUIViewAndCALayer */,
@@ -246,6 +254,24 @@
 			path = OCGCD;
 			sourceTree = "<group>";
 		};
+		B6DD4ED7262530B4006F6208 /* QuestionAndAnswer */ = {
+			isa = PBXGroup;
+			children = (
+				B6DD4ED8262530F4006F6208 /* QuestionAndAnswer.m */,
+			);
+			path = QuestionAndAnswer;
+			sourceTree = "<group>";
+		};
+		B6DD4EE4262544E9006F6208 /* OCLock */ = {
+			isa = PBXGroup;
+			children = (
+				B6DD4EDD262544E1006F6208 /* OCLockViewController.h */,
+				B6DD4EDE262544E1006F6208 /* OCLockViewController.m */,
+				B6DD4EDF262544E1006F6208 /* OCLockViewController.xib */,
+			);
+			path = OCLock;
+			sourceTree = "<group>";
+		};
 		B6EC18A826117788008A980E /* Runloop */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				B6AE34212624802900830937 /* Algorithm */,
+				B6DD4ED7262530B4006F6208 /* QuestionAndAnswer */,
 				B6CF8568261C013900E00CDB /* Features */,
 				B6EC18A826117788008A980E /* Runloop */,
 				B6F5608825F723E600AEF26A /* Utils */,
@@ -415,6 +442,7 @@
 				B6CF856F261C05D600E00CDB /* OCMemoryManagementViewController.xib in Resources */,
 				B60DA074261ECFC500DE466E /* OCDeallocViewController.xib in Resources */,
 				B60DA05F261EA1FD00DE466E /* OCRuntimeViewController.xib in Resources */,
+				B6DD4EE1262544E2006F6208 /* OCLockViewController.xib in Resources */,
 				B60DA08A261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib in Resources */,
 				B6AE34262624804C00830937 /* AlgorithmViewController.xib in Resources */,
 				B6F5606B25F0C7DF00AEF26A /* LaunchScreen.storyboard in Resources */,
@@ -442,6 +470,7 @@
 				B60DA065261EA9CD00DE466E /* OCCategoryViewController.m in Sources */,
 				B60DA082261EDA7F00DE466E /* OCRetainCycleViewController.m in Sources */,
 				B60DA073261ECFC500DE466E /* OCDeallocViewController.m in Sources */,
+				B6DD4EE0262544E2006F6208 /* OCLockViewController.m in Sources */,
 				B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */,
 				B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */,
 				B60DA089261EDAAA00DE466E /* CCUIViewAndCALayerViewController.m in Sources */,
@@ -456,6 +485,7 @@
 				B6FE5FFD261DB781001A8707 /* OCMessageViewController.m in Sources */,
 				B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */,
 				B6F5606E25F0C7DF00AEF26A /* main.m in Sources */,
+				B6DD4ED9262530F4006F6208 /* QuestionAndAnswer.m in Sources */,
 				B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */,
 				B6DD4ECA26241D75006F6208 /* OCCoreAnimationViewController.m in Sources */,
 				B6F5607925F0C84300AEF26A /* LRUMutableDictionary.m in Sources */,

@@ -14,8 +14,8 @@
 
 - (void)start {
 //    [self startLRUDictTest];
-//    [self startMemoryTest];
-    [self startRunloopTest];
+    [self startMemoryTest];
+//    [self startRunloopTest];
 }
 
 - (void)startLRUDictTest {

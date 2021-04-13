@@ -38,6 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    StartSampleManager *manager = [[StartSampleManager alloc] init];
+//    [manager start];
     
     self.title = @"Main";
     

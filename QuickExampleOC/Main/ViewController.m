@@ -19,30 +19,40 @@
 #import "CCUIViewAndCALayerViewController.h"
 #import "OCCoreAnimationViewController.h"
 #import "OCGCDViewController.h"
+#import <UIKit/UIKit.h>
+#import "ChildViewViewController.h"
 
 @interface ViewController ()
 
 //@property (nonatomic, strong) StartSampleManager *startSampleManager;
-//
-//@property (nonatomic, copy) NSArray<UIView *> *viewCollections;
-//@property (nonatomic, strong) UIView *grayView;
-//@property (nonatomic, strong) UIView *pinkView;
+
+@property (nonatomic, copy) NSArray<UIView *> *viewCollections;
+@property (nonatomic, strong) UIView *grayView;
+@property (nonatomic, strong) UIView *pinkView;
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray<NSString *> *dataSources;
 @property (nonatomic, copy) NSArray *viewControllers;
+//@property (nonatomic, strong) UIView *view;
 
 @end
 
 @implementation ViewController
 
+//- (void)loadView {
+//    TouchDebugView *aView = [[TouchDebugView alloc] init];
+//    aView.backgroundColor = UIColor.systemGrayColor;
+//    aView.frame = UIScreen.mainScreen.bounds;
+//    self.view = aView;
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    StartSampleManager *manager = [[StartSampleManager alloc] init];
 //    [manager start];
-    
+
     self.title = @"Main";
-    
+
     UITableView *tableView = [[UITableView alloc] initWithFrame:UIScreen.mainScreen.bounds];
     tableView.tableFooterView = [[UIView alloc] init];
     tableView.delegate = self;
@@ -51,12 +61,18 @@
     tableView.contentInset = UIEdgeInsetsMake(20, 0, 20, 0);
 
     [self.view addSubview:tableView];
-    
+
     _dataSources = @[@"Memory", @"OCStruct", @"OCMessage", @"KVO KVC", @"OCRuntime", @"OCCategory", @"OCDealloc", @"OCRetainCycle",
                      @"CCUIViewAndCALayer", @"OCCoreAnimation", @"OCGCD"];
     _viewControllers = @[OCMemoryManagementViewController.self, OCStructViewController.self, OCMessageViewController.self, KVCKVOViewController.self,
                          OCRuntimeViewController.self, OCCategoryViewController.self, OCDeallocViewController.self,
                          OCRetainCycleViewController.self, CCUIViewAndCALayerViewController.self, OCCoreAnimationViewController.self, OCGCDViewController.self];
+
+//    ChildViewViewController *vc = [[ChildViewViewController alloc] init];
+//    vc.view.frame = CGRectMake(100, 100, 100, 100);
+//    vc.view.backgroundColor = UIColor.systemBlueColor;
+//    [self.view addSubview:vc.view];
+//    [self addChildViewController:vc];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -79,11 +95,16 @@
     [self.navigationController pushViewController:vc animated:true];
 }
 
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    NSLog(@"viewController touchBegan");
+//    [super touchesBegan:touches withEvent:event];
+//}
+
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //
-//    _startSampleManager = [[StartSampleManager alloc] init];
-//    [_startSampleManager start];
+////    _startSampleManager = [[StartSampleManager alloc] init];
+////    [_startSampleManager start];
 //
 //    TDTapGestureRecognizer *blueTap = [[TDTapGestureRecognizer alloc] initWithTarget:self action: @selector(tapAction:)];
 //    blueTap.myName = @"blueTap";

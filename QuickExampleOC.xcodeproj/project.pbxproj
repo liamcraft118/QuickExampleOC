@@ -19,6 +19,7 @@
 		B60DA08A261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60DA088261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib */; };
 		B60DA08F261EEF4500DE466E /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B60DA08E261EEF4500DE466E /* MyView.m */; };
 		B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D42D02612ECEC0041D02F /* TouchDebugView.m */; };
+		B68267272626E75F0074EBF7 /* ChildViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68267262626E75F0074EBF7 /* ChildViewViewController.m */; };
 		B6AE34252624804C00830937 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE34232624804C00830937 /* AlgorithmViewController.m */; };
 		B6AE34262624804C00830937 /* AlgorithmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6AE34242624804C00830937 /* AlgorithmViewController.xib */; };
 		B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C51455261DF4CC005A2264 /* KVCKVOViewController.m */; };
@@ -71,6 +72,8 @@
 		B60DA08E261EEF4500DE466E /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		B65D42CF2612ECEC0041D02F /* TouchDebugView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDebugView.h; sourceTree = "<group>"; };
 		B65D42D02612ECEC0041D02F /* TouchDebugView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDebugView.m; sourceTree = "<group>"; };
+		B68267252626E75F0074EBF7 /* ChildViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildViewViewController.h; sourceTree = "<group>"; };
+		B68267262626E75F0074EBF7 /* ChildViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildViewViewController.m; sourceTree = "<group>"; };
 		B6AE34222624804C00830937 /* AlgorithmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmViewController.h; sourceTree = "<group>"; };
 		B6AE34232624804C00830937 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
 		B6AE34242624804C00830937 /* AlgorithmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlgorithmViewController.xib; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 				B6F5605F25F0C7DD00AEF26A /* SceneDelegate.m */,
 				B6F5606125F0C7DD00AEF26A /* ViewController.h */,
 				B6F5606225F0C7DD00AEF26A /* ViewController.m */,
+				B68267252626E75F0074EBF7 /* ChildViewViewController.h */,
+				B68267262626E75F0074EBF7 /* ChildViewViewController.m */,
 				B65D42CF2612ECEC0041D02F /* TouchDebugView.h */,
 				B65D42D02612ECEC0041D02F /* TouchDebugView.m */,
 				B6F5607D25F0DCDC00AEF26A /* StartSampleManager.h */,
@@ -488,6 +493,7 @@
 				B6DD4ED9262530F4006F6208 /* QuestionAndAnswer.m in Sources */,
 				B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */,
 				B6DD4ECA26241D75006F6208 /* OCCoreAnimationViewController.m in Sources */,
+				B68267272626E75F0074EBF7 /* ChildViewViewController.m in Sources */,
 				B6F5607925F0C84300AEF26A /* LRUMutableDictionary.m in Sources */,
 				B6F5606025F0C7DD00AEF26A /* SceneDelegate.m in Sources */,
 				B60DA08F261EEF4500DE466E /* MyView.m in Sources */,

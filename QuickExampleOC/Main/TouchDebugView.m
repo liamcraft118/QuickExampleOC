@@ -17,28 +17,30 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"%@: touchesBegain %@", NSStringFromClass([self class]), _name);
+//    [super touchesBegan:touches withEvent:event];
+    
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@: touchesMoved %@", NSStringFromClass([self class]), _name);
-    UITouch *touch = touches.allObjects[0];
-    CGPoint point = [touch locationInView:self];
-    if (![self pointInside:point withEvent:event]) {
-        [super touchesCancelled:touches withEvent:event];
-    }
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@: touchesEnded %@", NSStringFromClass([self class]), _name);
-}
-
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@: touchesCancelled %@", NSStringFromClass([self class]), _name);
-}
-
-- (void)touchesEstimatedPropertiesUpdated:(NSSet<UITouch *> *)touches {
-    NSLog(@"%@: touchesEstimatedPropertiesUpdated %@", NSStringFromClass([self class]), _name);
-}
+//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+////    NSLog(@"%@: touchesMoved %@", NSStringFromClass([self class]), _name);
+//    UITouch *touch = touches.allObjects[0];
+//    CGPoint point = [touch locationInView:self];
+//    if (![self pointInside:point withEvent:event]) {
+//        [super touchesCancelled:touches withEvent:event];
+//    }
+//}
+//
+//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+////    NSLog(@"%@: touchesEnded %@", NSStringFromClass([self class]), _name);
+//}
+//
+//- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+////    NSLog(@"%@: touchesCancelled %@", NSStringFromClass([self class]), _name);
+//}
+//
+//- (void)touchesEstimatedPropertiesUpdated:(NSSet<UITouch *> *)touches {
+////    NSLog(@"%@: touchesEstimatedPropertiesUpdated %@", NSStringFromClass([self class]), _name);
+//}
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     NSLog(@"%@, hitTest %@", NSStringFromClass([self class]), _name);

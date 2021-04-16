@@ -29,11 +29,38 @@
     [super viewDidLoad];
     self.title = @"OCMemory";
     
-    [self heapAndStack];
-    [self automaticReferenceCounting];
-    [self properties];
-    [self myAutoreleasePool];
-    [self myBlock];
+//    [self heapAndStack];
+//    [self automaticReferenceCounting];
+//    [self properties];
+//    [self myAutoreleasePool];
+//    [self myBlock];
+    
+    Person *p = [[Person alloc] init];
+    p.name = @"zhangsan";
+
+    NSArray *a = @[p];
+    NSArray *b = [a copy];
+    NSArray *c = [a mutableCopy];
+
+    Person *p2 = [c firstObject];
+    p2.name = @"lisi";
+    NSLog(@"aaaaaaaaa");
+    NSLog(@"%@", a);
+    NSLog(@"%@", b);
+    NSLog(@"%@", c);
+    NSLog(@"%@", p);
+    NSLog(@"%@", p2);
+    NSLog(@"%@", p.name);
+    NSLog(@"aaaaaaaaa");
+    Person *pa = a[0];
+    Person *pb = a[0];
+    Person *pc = a[0];
+    LMLOG(pa)
+    LMLOG(pb)
+    LMLOG(pc)
+    LMLOG(a)
+    LMLOG(b)
+    LMLOG(c)
 }
 
 /**

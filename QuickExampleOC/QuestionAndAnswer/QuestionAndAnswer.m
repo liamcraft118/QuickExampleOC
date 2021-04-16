@@ -7,6 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ 面试官好，我从本科毕业开始，就从事iOS开发，到现在已经有7年的时间，
+ 从语言方面来讲，OC和swift都可以熟练使用，也用Flutter开发过一款App，上架到App Store，
+ 从项目上来讲，主要涉及的是内容的展示，除此之外也还包括音频、摄像头相关的开发
+ 我个人性格还是比较沉稳，能够沉得下心来写代码或者是阅读一些源码，
+ 我在目前这家公司工作了将近四年，这次求职的原因是看看有没有更合适的机会，也是希望能够找到更合适的平台，发挥自己更大的潜力。
+ */
 
 /**
  代码阅读题：(问输出)
@@ -90,7 +97,7 @@
  避免资源竞争
  9. GCD group或者利用NSCondition，使用生产者消费者模型
  10. 自旋锁是bool + while，忙等待；信号量是利用lll_futex_wait()让当前线程睡眠，让出睡眠时间。
- 11、12、13 不会
+ 11、12、13 不清楚
  14. 静态库：.a、.framework，链接时完整地拷贝到可执行文件中，如果有多份引用，就会有多份拷贝
  动态库：.dylib、.framework，链接时不复制，程序运行时，由系统动态加载到内存，系统只加载一次，多个程序使用
  */
@@ -148,7 +155,7 @@
  5. 不清楚
  6. 自旋锁忙等待，互斥锁用到了lll_futex_wait()让线程休眠，让出时间片
  7. 不清楚
- 8. 后面再说
+ 8. 不清楚
  */
 
 /**
@@ -189,6 +196,347 @@
  2. 执行objc_msgSend(object, _cmd)，给A发消息，叫A执行名为B的方法，A会依次从cache_list，class_method_list，super_class_method_list依次去找有没有这样的方法，如果有，就通过哈希表找到这个方法对应的实现，然后执行；
  如果没有，则进入消息转发，分别为(Bool)resolveInstanceMethod:(SEL)sel, (id)forwardingTargetForSelector:(SEL)sel, methodSignatureForSelector:(SEL)sel, forwardInvocation:(NSInvocation *)anInvocation
  首先是给自己一个机会，把这个方法加到Class中，然后转发给其他实现了这个方法的对象去执行，最后数据都给你，你自己想怎么处理怎么处理。
+ 3. objc_object包含isa指针，objc_class继承于objc_class，并且包含指向父类/元类的指针，还包括方法列表、属性列表、协议列表
+ 对象的isa指针指向类，类的isa指针指向元类
+ 类的superClass指向父类，最终指向rootClass，也就是NSObject
+ 元类的superClass指向元类的父类，最终指向rootMetaClass
+ rootMetaClass的isa指向自己，superClass指向rootClass
+ 4. 不清楚
+ 5. runloop是为了确保有一条线程一直存活着来执行任务，没事的时候，能够睡眠减少资源消耗，有事的时候能够被唤醒执行任务。
+ runloop有一些mode，常见的有NSDefaultRunloopMode和UITrackingRunloopMode，他们之间的区别是，它们各自持有的source不一样，他们可以有不同的source、timer、observer。
+ 比如滑动的时候主线程的runloop是运行在UITrackingRunloopMode下，这个目的是为了滑动流畅，避免一些耗时的操作。
+ source0就是一个普通的任务，source1是一个能够唤醒runloop的任务，而timer是定时触发的任务。
+ runtime是运行时
+ 6. 首先屏幕接收到触摸这个事件，IOKit会将这个事件进行封装，交给SpringBoard，SpringBoard自己响应或者交给当前正在运行的app进程的主线程，是一个source1任务，这个任务被执行的时候会生成一个source0任务，将这个触摸事件分发下去。
+ 接下来是事件的分发，自底向上，由UIApplication->UIWindow->user interface，分发过程利用hitTest:和positionInside:确定自己是否应该响应事件，如果需要响应，则返回自己。
+ 最后就是响应事件，自顶向下，对于UIResponder而言，在touchBegan时，执行[super touchBegan]则将事件交给自己的下一层view/viewController来响应
+ 对于UIGestureRecognizer，具有更高的响应优先级，事件会先发给UIGestureRecognizer，如果手势响应这个事件，会cancel掉UIResponder中的响应
+ 对于UIControl是UIResponder相关touchBegan的封装
+ 7. 通过runloop的observer监听beforeWaiting，利用信号量设置超时等待时间，如果超时，则说明主线程卡顿了。
+ 主线程中执行dispatch_semaphore_signial让等待的线程执行，表明主线程没有卡顿。
+ 8. 只知道思路，hook objc_msgSend这个方法，先记录时间，然后执行objc_msgSend，然后再记录时间，计算这个时间的差值
+ */
+
+/**
+ 1. Objective-C的内存管理
+ 2. ARC和MRC的区别
+ 3. Timer的使用，怎么避免循环引用
+ 4. autoreleasePool的底层实现机制
+ 5. autoreleasePool的底层数据结构，为什么要这么设计
+ 6. iOS中常见的多线程技术
+ 7. 常见的锁，有什么区别
+ 8. 如果让你设计读写锁，你怎么设计
+ 9. RN、flutter、weex：
+ 10. 你怎么看待这些动态化技术
+ 11. RN、flutter以及weex的区别
+ 12. RN怎么和native通信的
+ */
+/*
+ 1. 程序运行需要占用内存，那么就需要释放内存；在短时间内占用大量内存，也需要处理。
+ 栈内存不需要我们管理，我们需要管理的是堆内存。
+ 2. ARC自动引用计数，MRC手动引用计数，主要区别在于ARC中的引用计数的处理是自动的，而MRC是手动的，相关方法包括retain, release, autorelease
+ 3. 添加进runloop，让target指向weakProxy，或者手动让[timer invalidate]
+ 4. autoreleasePool是在runloop enter的时候创建，beforeWaiting时重置，exit时销毁
+ 5. autoreleasePool数据结构是栈，把需要自动释放的对象依次压入栈，在需要释放的时候依次出栈进行release
+ 6. pthread, NSThread, GCD, NSOperation
+ 7. 自旋锁，信号量，互斥锁，NSCondition，NSLock, NSRecursiveLock, @synconized
+ 8. 忙等待利用bool和while，闲等待利用lll_futex_wait()
+ 9. 不清楚
+ 10. 他们都是在深入了解iOS底层实现的基础上完成的，RN是基于javaScriptCore，而Flutter是基于surface，openGL
+ 11. 不清楚
+ 12. 不清楚
+ */
+
+/**
+ 1. QA发现了一个按钮无法响应点击事件，可能是什么原因导致的（说了五种情况好像没有答到面试官要的点）
+ 2. iOS响应者链，怎么寻找最合适的响应者，如果为nil会怎么办
+ 3. frame和bounds的区别
+ 4. 如果bounds的origin不是00会怎样
+ 5. 多线程一般会有什么问题，请举个例子
+ 6. 为什么会造成上述问题以及解决方案
+ 7. 主队列和主线程的关系
+ 8. 全局并发队列一定在主线程上运行的么
+ 9. 项目相关，用了什么技术，有哪些难点，怎么处理的
+ */
+/*
+ 1. 被透明的UIView遮挡
+ layer的bounds的origin不为0，导致layer显示在响应区域外
+ 没有添加响应事件、添加了相应事件但逻辑有问题导致没有执行
+ 要响应这个事件的对象被释放了
+ 按钮重写了hitText:或者touchBegan
+ 按钮中有一个UIResponder响应并拦截了这个事件
+ 2. -
+ 3. -
+ 4. -
+ 5. 资源竞争，比如一个线程在遍历数组，另一个线程往数组里面添加/删除数据
+ 6. 加锁或者用一个串行队列
+ 7. 主队列存储要执行的任务，主线程来执行这些任务，他们是一对一的。
+ 8. 有可能运行在主线程上，比如用dispatch_sync
+ 9. -
+ */
+
+/**
+ 1. 项目中遇到的问题，怎么解决的
+ 2. 聊了聊OC中的内存管理
+ 3. 一个对象什么时候会引用计数+1，什么时候引用计数-1
+ 4. 对象A copy后生成字符串对象B AB引用计数是怎样的
+ 5. 如果A是可变的呢
+ 6. 关键字，readonly有了解吗
+ 7. 修饰对象的默认关键字是啥
+ 8. category相关，category是怎么实现的
+ 9. category的结构
+ 10. category中的方法会覆盖原来类的方法吗
+ 11. category中怎么区分开类方法和实例方法的
+ 12. category的方法是怎么插入到类(元类)对象方法列表中的
+ 13. 同时最多执行5个任务怎么设计
+ 14. AFN中 success 和 fail block是在子线程还是主线程
+ 15. 不通过回到主队列的方式回到主线程（有点没get到点）
+ 16. SDWebImage的下载原理
+ 17. 如果有两个相同的url，SDWebImage是怎么处理的
+ */
+/*
+ 1. 项目有一个需求，实现类似苹果自带计算器按键效果，就是按下之后，移动手指，当离开按钮时，按钮恢复normal状态，移动到其他按钮时，这个按钮要高亮。
+ 2. retain, release, autorelease
+ 3. retain时+1，release时-1
+ 4. A、B是同一个，引用计数为2
+ 5. A、B是不同的对象，引用计数都为1
+ 6. 只读，存在Class的class_ro_t中，只有get方法，所以只读。
+ 7. atomic, readwrite, strong
+ 8. category是用runtime实现的
+ 9. category保存了实例方法、类方法、属性、协议
+ 10. 不会，只是加到前面
+ 11. 两个不同的数组
+ 12. 在运行时初始化时，把这些加入进去的，调用runtime相关的的接口
+ 13. 高层API的话，NSOperationQueue可以实现，maxConcurrentOperationCount = 5，
+ 14. 不清楚，猜测是在子线程
+ 15. 利用runloop，perform:onThread，source0，source1，timer，observer都可以
+ 16. 不清楚
+ 17. 不清楚，不过肯定有缓存，url就是key
+ */
+
+/**
+ 1. iOS内存管理（引用计数、修饰词、weak和assign的区别）
+ 2. runtime（什么是runtime，为啥要有runtime，你用runtime做过什么事情）
+ 3. 怎么进行方法的交换
+ 4. +load在什么时候调用的，对启动的影响
+ 5. 代码题：ABCDE五个任务，D依赖AB的执行，E依赖BC的执行，怎么设计
+ 6. GCD信号量，线程同步等
+ 7. Runloop是啥，为啥要设计runloop，runloop和线程的关系
+ 8. Timmer为啥会有内存泄漏的现象，Runloop会持有Timmer么
+ 9. 什么是source0和source1，分别做什么事情
+ 10. 怎么监测app卡顿
+ 11. UIView 和 CALayer的区别，为什么要这么设计
+ 12. 隐式动画和显示动画的区别
+ */
+/*
+ 1. -
+ 2. -
+ 3. class_replaceMethod()
+ 4. Class添加进runtime时
+ 5. 高层API，NSOperation，或者生产者-消费者模型，D等AB信号，E等BC信号
+ 6. 加锁
+ 7. -
+ 8. -
+ 9. -
+ 10. 监听runloop的afterWaiting和beforeWaiting状态，用信号量判断是否超时。afterWaiting时开始等待，beforeWaiting时通知完成。如果超时，则卡顿，没有超时，则继续下一个循环。
+ 11. 职责分离。UIView响应事件、管理视图、无动画，CALayer绘制、委托、有隐式动画
+ 12. 不清楚
+ */
+
+/**
+ 1. 分类和extension区别
+ 2. 分类的实现机制
+ 3. 分类同名方法的调用
+ 4. 关联对象，策略有哪些，关联对象的key为啥要用static修饰（这个没有get到点）
+ 5. GCD、NSThread以及NSOperation的区别，怎么取消任务
+ 6. GCD block内存管理
+ 7. 自己实现一个函数，其中有个形参是block，这个block是什么时候进行copy的，一定会进行copy操作嘛
+ 8. 手指点在高德地图上的一个按钮，会发生什么 ，具体说明
+ 9. 怎么找到最合适的view
+ 10. 如过有多个子VC，是先VC还是先View
+ 11. Runloop是怎么监听到点击事件的
+ 12. Runloop和线程的关系，Runloop能单独存在嘛
+ 13. 怎么做到线程保活
+ 14. A包含B包含C，怎么做才能让C的点击响应区域是 以C对角线为半径的圆弧（要说出具体实现方式）
+ */
+/*
+ 1. 运行时注入和静态编译
+ 2. runtime
+ 3. 遍历Class中的方法列表，找到第二个
+ 4. retain, copy, assign, nonatomic
+ 5. NSOperation底层使用的是GCD，GCD和NSThread应该都是对pthread的封装，NSOperation中有cancel。GCD和NSThread只能手动了，添加一个bool值，在回调中处理。
+ 6. GCD的block会在执行完之后自行释放，不会造成循环引用
+ 7. ARC情况下，应该是创建的时候进行copy的，用weak进行修饰应该不会copy
+ 8. 响应链
+ 9. hitTest:和positionInside:
+ 10. 响应时，先view再vc，子vc也是先view再子vc
+ 11. IOKit给runloop发消息
+ 12. runloop就是线程里面跑的一串循环执行的代码
+ 13. 添加port
+ 14. 我们先假设A的hitTest:方法会执行，然后计算出C中的(0, 0)点在A中的位置，以这个点为圆心，C对角线的长度为半径，利用贝塞尔曲线画一个圆，
+ 判断点击的点是否在这个圆之内，如果是返回C
+ */
+
+/**
+ 1. 代码题：
+ 下方代码中三个数组中的p.name是啥，为什么
+ Person *p = [[Person alloc] init];
+ p.name = @"zhangsan";
+
+ NSArray *a = @[p];
+ NSArray *b = [a copy];
+ NSArray *c = [a mutableCopy];
+
+ Person *p2 = [c firstObject];
+ p2.name = @"lisi";
+ 
+ 2. 下方代码会有什么问题，为什么
+ NSNotificationCenter *__weak center = [NSNotificationCenter defaultCenter];
+ id __block token = [center addObserver:kDdiRegisterNotification
+                                 object:nil
+                                  queue:[NSOperationQueue mainQueue]
+                             usingBlock:^(NSNotification *note) {
+                                     [self getDataWithComplete:completeBlock];
+                                     [center removeObserver:token];
+                                  }];
+
+ */
+/*
+ 1. 分析：
+ b是指针复制，内容不变，a、b都指向同一个数组，a、b中保存到指向p的指针不同，p指向的地址相同
+ c是内容复制，c指向另一个数组，c中p的指针变了，但p指向的内容相同
+ p2指向的是p的对象，修改名字后，p.name发生了变化
+ 
+ 2. 据我了解，第一句代码就会产生一个warning，告诉你这个对象立马就会被释放，但实际运行时却没有被释放，我以为是debug的问题，结果在release跑也没有释放。
+ 那么既然没有释放，它就能成功添加观察的内容，token也能正常生成，但在usingBlock的时候，center由于是弱引用，变为了nil。
+ */
+
+/**
+ 1. MRC 和 ARC 的区别
+ 2. ARC有什么缺点
+ 3. MRC 下 写setter方法
+ 4. 你理解的id 以及 id 和 void *区别
+ 5. 函数指针和指针函数的区别
+ 6. CALayer 和 UIView的关系
+ 7. 苹果为什么要这么设计
+ 8. frame、bounds、center
+ 9. layoutIfNeeded、layoutSubViews、setNeedsDisplay区别
+ 10. 响应者链（顺便说了下完整的手指触摸屏幕会发生什么引出了后续runloop相关问题）
+ 11. runloop source0 和 source1都是啥
+ 12. runloop和线程的关系
+ 13. OC 消息发送机制（提到了isa、类对象，引出下面问题）
+ 14. 写下类的结构
+ 15. isa在32为和64位的区别
+ 16. 什么是元类为啥要这么设计
+ 17. category 和 extension 的区别
+ 18. +load方法
+ */
+/*
+ 1. -
+ 2. 缺点可能是会在性能上有一定影响，尤其是大家对内存管理不够了解之后再写代码。
+ 3. -
+ 4. id是指向NSObject对象的指针，而void *是指向任意类型的指针
+ 5. 指针函数是指一个函数返回值是一个指针；函数指针是指指向函数的指针。
+ 6. -
+ 7. 职责分离
+ 8. 相对父类坐标，相对自身的坐标，中心店
+ 9. layoutIfNeeded是立马执行layout操作，这个操作是在UI刷新中的commit transaction的过程中，在这个过程中会执行layoutSubviews。
+ setNeedsDisplay是将这个layer的display状态标记为dirty，等下一次runloop的时候，更新这个layer的UI。
+ 10. -
+ 11. -
+ 12. -
+ 13. (BOOL)resolveMethodInstance:(SEL)sel, forwardTargetForSelector, methodSignatureForSelector, forwardInvocation
+ 14. isa super_class cache bits(class_rw_t)
+ 15. 不清楚
+ 16. 形成闭环
+ 17. 运行时和编译器
+ 18. Class加载到runtime时
+ */
+
+/**
+ 代码题：（1、输出什么 2、如果是在主线程中会怎么样）
+ NSLog(@"1");
+ dispatch_sync(^{
+     NSLog(@"2");
+ });
+ NSLog(@"3");
+ */
+/*
+ 输出1、2、3，或者1
+ */
+
+/**
+ 1. Weex和RN以及flutter的区别
+ 2. 要是收到了内存警告怎么办
+ 3. 循环引用和内存泄露
+ 4. Block造成循环引用的原理
+ 5. Runloop和Timer的关系
+ 6. Runloop能有很多Timer么
+ 7. 什么是source0 和 source1
+ 8. Timer一定是准时的吗，为什么
+ 9. FPS怎么监控，上传时机
+ */
+/*
+ 1. 不清楚
+ 2. 如果是正在进行图片加载、下载相关操作的话，可以将缓存清除掉
+ 主要还是通过一些手段预防占用内存过多，比如使用NSCache，将图片压缩，将循环体内的临时变量加到autoreleasePool中
+ 3. -
+ 4. vc会持有block，而block再持有vc就会造成循环引用
+ 5. runloop持有timer，然后执行相关任务
+ 6. 可以
+ 7. 我理解为一个事件
+ 8. 不准时，受runloop中实际执行的任务的影响
+ 9. 利用CADisplayLink，在屏幕完成一次更新之后执行，然后在里面计算1秒钟执行了多少次这个方法。
+ */
+
+/**
+ iOS中+load 和 initialized区别
+ iOS修饰属性常用的修饰符
+ weak和strong的区别
+ strong和unsafe_unretained区别
+ 什么是单例
+ 对象的比较
+ */
+/*
+ 1. -
+ 2. -
+ 3. -
+ 4. -
+ 5. -
+ 6. 重写isEqualTo
+ */
+
+/**
+ 1. 常见的crash
+ 2. 怎么处理这些crash
+ 3. 怎么设计一个crash日志回捞系统
+ 4. Objc为啥要设计消息发送机制，直接调函数不好吗
+ 5. 怎么获取函数的堆栈
+ 6. 怎么监控APP卡顿
+ 7. APP启动做了哪些事情怎么优化
+ 8. +load
+ 9. 怎么进行业务解耦
+ 10. APP性能优化相关
+ 11. 设计一个下载任务
+ 12. 可以并行也可以串行
+ 13. 有最大的并发数量
+ 14. 可以断点续传
+ 15. 如何解耦
+ 16. 缓存怎么设计（说了LRU、LFU）
+ */
+/*
+ 1. 野指针、数组越界、访问没有实现的方法
+ 2. 规避
+ 3. 不清楚
+ 4. 动态语言
+ 5. https://zhuanlan.zhihu.com/p/138755187
+ 6. 子线程中记录runloop开始执行的状态，用信号量等待超时时间，在runloop结束执行的时候，调用信号量。
+ 7. 加载动态库、ImageLoader加载image，runtime执行Class的+load方法
+ 8. -
+ 9. -
+ 10. -
+ 11. -
+ 16. -
  */
 
 /**
@@ -230,10 +578,37 @@
  GET和POST请求
  GET请求参数一定是放在URL中的么
  HTTPS （TLS是啥，怎么建立连接等）
+ 你平常用过Charles么，说说Charles的抓包原理
+ Charles能抓HTTPS么，怎么实现
+ HTTPS怎么建立连接的
+ 中间人攻击，怎么避免
+ JS是怎么和Native通信的
+ 模块表是怎么生成的
+ JS函数注入怎么做的
+ RN 和 Weex 的区别
+ HTTP 请求头
+ HTTP 状态码
  */
 
 /**
  算法题：判断平衡二叉树（easy）
  算法：有一个很大的整形数据，转成二进制求1的个数（因为前面聊比较多，只要求说了下思路）
  算法：求N!
+ 字符串转整形
+ 反转链表（递归和非递归）
+ 将两个有序链表合并成一个有序链表
+ 算法: 山脉数组找目标值(要求logN的时间复杂度)
+ 算法：有个view有很多子view，没个子view中也有很多子view，找出所有的按钮，并切圆角（图的BFS）
+ 算法：两题LC medium（都要求写完跑case）
+ 给定一个数字n 求出全部集合（n = 3 输出 [[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]）
+ Lc 200 求岛屿个数
+ 算法题 判断镜像二叉树
+ 算法：两数之和（要求空间复杂度O(1)）
+ 算法：开根号（要求跑case）
+ 算法：链表反转
+ */
+
+/**
+ 1. LRU、LFU
+ 2. APP性能优化，https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/
  */

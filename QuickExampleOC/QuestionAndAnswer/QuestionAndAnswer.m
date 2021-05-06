@@ -8,14 +8,6 @@
 #import <Foundation/Foundation.h>
 
 /**
- 面试官好，我从本科毕业开始，就从事iOS开发，到现在已经有7年的时间，
- 从语言方面来讲，OC和swift都可以熟练使用，也用Flutter开发过一款App，上架到App Store，
- 从项目上来讲，主要涉及的是内容的展示，除此之外也还包括音频、摄像头相关的开发
- 我个人性格还是比较沉稳，能够沉得下心来写代码或者是阅读一些源码，
- 我在目前这家公司工作了将近四年，这次求职的原因是看看有没有更合适的机会，也是希望能够找到更合适的平台，发挥自己更大的潜力。
- */
-
-/**
  代码阅读题：(问输出)
  TestObject *object1 = [[TestObject alloc] init];
  __block TestObject *object2 = [[TestObject alloc] init];
@@ -270,7 +262,10 @@
  4. -
  5. 资源竞争，比如一个线程在遍历数组，另一个线程往数组里面添加/删除数据
  6. 加锁或者用一个串行队列
- 7. 主队列存储要执行的任务，主线程来执行这些任务，他们是一对一的。
+ 7. "主队列存储要执行的任务，主线程来执行这些任务，他们是一对一的"
+ update: 之前的回答有误，主队列的任务一般在主线程上运行，全局队列的任务一般是在子线程中运行，但都有例外。
+ 执行dispatch_main()之后，主线程会被阻塞，并且将主队列的任务交到子线程中执行。
+ 在主线程中dispatch_sync(globalQueue)执行任务，任务是在主线程中执行。
  8. 有可能运行在主线程上，比如用dispatch_sync
  9. -
  */
@@ -540,7 +535,42 @@
  */
 
 /**
- 聊项目：自己项目偏后端，问了很多和后端相关的内容，后续问的问题也基本上要求从客户端和后端双重角度回答
+ 1、Block是如何实现的？Block对应的数据结构是什么样子的？__block的作用是什么？它对应的数据结构又是什么样子的？
+ 2、GCD中的Block是在堆上还是栈上？
+ 3、NSCoding协议是干什么用的？
+ 4、KVO的实现原理
+ 5、NSOperation有哪些特性，比着GCD有哪些优点，它有哪些API？
+ 6、NSNotificaiton是同步还是异步的，如果发通知时在子线程，接收在哪个线程？
+ */
+/*
+ 1. 是一个struct，有isa指针，invoke函数指针，variables存储捕获的变量
+ 2. 堆上
+ 3. 编码、解码时依赖该协议
+ 4. 利用runtime生成中间对象，让isa指针指向这个中间对象，重写setter方法，插入willChangeValueForKey:和didChangeValueForKey:
+ 5. 面向对象，提供cancel()方法，能够设置依赖
+ 6. 同步，子线程
+ */
+
+/**
+ 1. 什么是异步渲染？
+ 2. layoutsubviews是在什么时机调用的？
+ 3. 一张图片的展示经历了哪些步骤？
+ 4. 什么是离屏渲染，什么情况会导致离屏渲染？
+ 5. CoreAnimation这个框架的作用什么，它跟UIKit的关系是什么？
+ */
+/*
+ 1. 子线程绘制，主线程显示。
+ UIView的显示是通过CALayer来实现的，CALayer的显示则是通过contents来完成的。我们不能在子线程中将内容绘制到layer的contents中，但我们可以在子线程中，
+ 通过CGBitmapContextCreateImage，将绘制内容，再切回主线程，将内容复制给layer.contents
+ 2. init不会调用
+ frame值改变时，UIScrollView滚动时，setNeedsLayout时，addSubView时，屏幕旋转时
+ 3. 分配内存缓冲区，将图片数据从磁盘读取到内存中
+ 在渲染之前，将图片数据解码，这一步发生在主线程中
+ 然后将解码后的数据交给GPU渲染
+ 4. 
+ */
+
+/**
  你了解的网络协议
  HTTP和TCP、UDP的联系
  HTTP和HTTPS的区别
@@ -555,6 +585,12 @@
  GET请求和POST的区别，POST请求参数能放在URL中么为啥
  你了解的HTTP请求响应状态码
  说说为什么要设计304这个状态码
+ */
+/*
+ 1. 常见网络协议https://juejin.cn/post/6844903951335178248
+ */
+
+/**
  Web登录时怎么保持会话状态的
  你知道cookie和session的区别么
  你知道常见的网络攻击么

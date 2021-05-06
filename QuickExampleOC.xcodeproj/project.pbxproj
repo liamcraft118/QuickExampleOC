@@ -18,8 +18,10 @@
 		B60DA089261EDAAA00DE466E /* CCUIViewAndCALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60DA087261EDAAA00DE466E /* CCUIViewAndCALayerViewController.m */; };
 		B60DA08A261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60DA088261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib */; };
 		B60DA08F261EEF4500DE466E /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B60DA08E261EEF4500DE466E /* MyView.m */; };
+		B6564C5E2643D28800515466 /* AnotherSwiftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6564C5D2643D28800515466 /* AnotherSwiftFile.swift */; };
 		B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D42D02612ECEC0041D02F /* TouchDebugView.m */; };
 		B68267272626E75F0074EBF7 /* ChildViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68267262626E75F0074EBF7 /* ChildViewViewController.m */; };
+		B6A7845626368E4000246977 /* CSQuestionAndAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A7845526368E4000246977 /* CSQuestionAndAnswer.m */; };
 		B6AE34252624804C00830937 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE34232624804C00830937 /* AlgorithmViewController.m */; };
 		B6AE34262624804C00830937 /* AlgorithmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6AE34242624804C00830937 /* AlgorithmViewController.xib */; };
 		B6AE3429262991D200830937 /* MyQuestionAndAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE3428262991D200830937 /* MyQuestionAndAnswer.m */; };
@@ -30,6 +32,10 @@
 		B6CF8575261C09A400E00CDB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF8574261C09A400E00CDB /* Person.m */; };
 		B6CF857C261C6B2C00E00CDB /* OCStructViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF857A261C6B2B00E00CDB /* OCStructViewController.m */; };
 		B6CF857D261C6B2C00E00CDB /* OCStructViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CF857B261C6B2B00E00CDB /* OCStructViewController.xib */; };
+		B6D5D09B263566C100ED0619 /* CSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D099263566C100ED0619 /* CSDetailViewController.m */; };
+		B6D5D09C263566C100ED0619 /* CSDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D5D09A263566C100ED0619 /* CSDetailViewController.xib */; };
+		B6D5D0A02635747700ED0619 /* SwiftQuestionAndAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D09F2635747700ED0619 /* SwiftQuestionAndAnswer.m */; };
+		B6D5D0A4263574F700ED0619 /* SwiftTestDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D0A3263574F700ED0619 /* SwiftTestDemo.swift */; };
 		B6DD4ECA26241D75006F6208 /* OCCoreAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD4EC826241D74006F6208 /* OCCoreAnimationViewController.m */; };
 		B6DD4ECB26241D75006F6208 /* OCCoreAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6DD4EC926241D74006F6208 /* OCCoreAnimationViewController.xib */; };
 		B6DD4ED226242362006F6208 /* OCGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DD4ED026242362006F6208 /* OCGCDViewController.m */; };
@@ -71,10 +77,12 @@
 		B60DA088261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCUIViewAndCALayerViewController.xib; sourceTree = "<group>"; };
 		B60DA08D261EEF4500DE466E /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		B60DA08E261EEF4500DE466E /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		B6564C5D2643D28800515466 /* AnotherSwiftFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherSwiftFile.swift; sourceTree = "<group>"; };
 		B65D42CF2612ECEC0041D02F /* TouchDebugView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDebugView.h; sourceTree = "<group>"; };
 		B65D42D02612ECEC0041D02F /* TouchDebugView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDebugView.m; sourceTree = "<group>"; };
 		B68267252626E75F0074EBF7 /* ChildViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildViewViewController.h; sourceTree = "<group>"; };
 		B68267262626E75F0074EBF7 /* ChildViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildViewViewController.m; sourceTree = "<group>"; };
+		B6A7845526368E4000246977 /* CSQuestionAndAnswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSQuestionAndAnswer.m; sourceTree = "<group>"; };
 		B6AE34222624804C00830937 /* AlgorithmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmViewController.h; sourceTree = "<group>"; };
 		B6AE34232624804C00830937 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
 		B6AE34242624804C00830937 /* AlgorithmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlgorithmViewController.xib; sourceTree = "<group>"; };
@@ -90,6 +98,12 @@
 		B6CF8579261C6B2B00E00CDB /* OCStructViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCStructViewController.h; sourceTree = "<group>"; };
 		B6CF857A261C6B2B00E00CDB /* OCStructViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCStructViewController.m; sourceTree = "<group>"; };
 		B6CF857B261C6B2B00E00CDB /* OCStructViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCStructViewController.xib; sourceTree = "<group>"; };
+		B6D5D098263566C100ED0619 /* CSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSDetailViewController.h; sourceTree = "<group>"; };
+		B6D5D099263566C100ED0619 /* CSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSDetailViewController.m; sourceTree = "<group>"; };
+		B6D5D09A263566C100ED0619 /* CSDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSDetailViewController.xib; sourceTree = "<group>"; };
+		B6D5D09F2635747700ED0619 /* SwiftQuestionAndAnswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftQuestionAndAnswer.m; sourceTree = "<group>"; };
+		B6D5D0A2263574F600ED0619 /* QuickExampleOC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickExampleOC-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6D5D0A3263574F700ED0619 /* SwiftTestDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestDemo.swift; sourceTree = "<group>"; };
 		B6DD4EC726241D74006F6208 /* OCCoreAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCCoreAnimationViewController.h; sourceTree = "<group>"; };
 		B6DD4EC826241D74006F6208 /* OCCoreAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCCoreAnimationViewController.m; sourceTree = "<group>"; };
 		B6DD4EC926241D74006F6208 /* OCCoreAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCCoreAnimationViewController.xib; sourceTree = "<group>"; };
@@ -211,6 +225,7 @@
 		B6CF8568261C013900E00CDB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B6D5D0962635668B00ED0619 /* CS */,
 				B6DD4EE4262544E9006F6208 /* OCLock */,
 				B6DD4ECE26242352006F6208 /* OCGCD */,
 				B6DD4ECD26241D79006F6208 /* OCCoreAnimation */,
@@ -247,6 +262,16 @@
 			path = OCStruct;
 			sourceTree = "<group>";
 		};
+		B6D5D0962635668B00ED0619 /* CS */ = {
+			isa = PBXGroup;
+			children = (
+				B6D5D098263566C100ED0619 /* CSDetailViewController.h */,
+				B6D5D099263566C100ED0619 /* CSDetailViewController.m */,
+				B6D5D09A263566C100ED0619 /* CSDetailViewController.xib */,
+			);
+			path = CS;
+			sourceTree = "<group>";
+		};
 		B6DD4ECD26241D79006F6208 /* OCCoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +296,11 @@
 			isa = PBXGroup;
 			children = (
 				B6DD4ED8262530F4006F6208 /* QuestionAndAnswer.m */,
+				B6D5D09F2635747700ED0619 /* SwiftQuestionAndAnswer.m */,
+				B6A7845526368E4000246977 /* CSQuestionAndAnswer.m */,
+				B6D5D0A3263574F700ED0619 /* SwiftTestDemo.swift */,
+				B6564C5D2643D28800515466 /* AnotherSwiftFile.swift */,
+				B6D5D0A2263574F600ED0619 /* QuickExampleOC-Bridging-Header.h */,
 			);
 			path = QuestionAndAnswer;
 			sourceTree = "<group>";
@@ -429,6 +459,7 @@
 				TargetAttributes = {
 					B6F5605725F0C7DD00AEF26A = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -464,6 +495,7 @@
 				B6F5606B25F0C7DF00AEF26A /* LaunchScreen.storyboard in Resources */,
 				B60DA083261EDA7F00DE466E /* OCRetainCycleViewController.xib in Resources */,
 				B6FE5FFE261DB781001A8707 /* OCMessageViewController.xib in Resources */,
+				B6D5D09C263566C100ED0619 /* CSDetailViewController.xib in Resources */,
 				B6CF857D261C6B2C00E00CDB /* OCStructViewController.xib in Resources */,
 				B6F5606825F0C7DF00AEF26A /* Assets.xcassets in Resources */,
 				B60DA066261EA9CD00DE466E /* OCCategoryViewController.xib in Resources */,
@@ -482,12 +514,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F5606325F0C7DD00AEF26A /* ViewController.m in Sources */,
+				B6A7845626368E4000246977 /* CSQuestionAndAnswer.m in Sources */,
 				B6F5608425F5FEBE00AEF26A /* MemorySample.m in Sources */,
 				B60DA065261EA9CD00DE466E /* OCCategoryViewController.m in Sources */,
 				B60DA082261EDA7F00DE466E /* OCRetainCycleViewController.m in Sources */,
 				B60DA073261ECFC500DE466E /* OCDeallocViewController.m in Sources */,
 				B6AE3429262991D200830937 /* MyQuestionAndAnswer.m in Sources */,
 				B6DD4EE0262544E2006F6208 /* OCLockViewController.m in Sources */,
+				B6D5D0A02635747700ED0619 /* SwiftQuestionAndAnswer.m in Sources */,
 				B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */,
 				B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */,
 				B60DA089261EDAAA00DE466E /* CCUIViewAndCALayerViewController.m in Sources */,
@@ -496,16 +530,19 @@
 				B6AE34252624804C00830937 /* AlgorithmViewController.m in Sources */,
 				B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */,
 				B6CF8575261C09A400E00CDB /* Person.m in Sources */,
+				B6D5D09B263566C100ED0619 /* CSDetailViewController.m in Sources */,
 				B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */,
 				B60DA05E261EA1FD00DE466E /* OCRuntimeViewController.m in Sources */,
 				B6DD4ED226242362006F6208 /* OCGCDViewController.m in Sources */,
 				B6FE5FFD261DB781001A8707 /* OCMessageViewController.m in Sources */,
 				B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */,
 				B6F5606E25F0C7DF00AEF26A /* main.m in Sources */,
+				B6D5D0A4263574F700ED0619 /* SwiftTestDemo.swift in Sources */,
 				B6DD4ED9262530F4006F6208 /* QuestionAndAnswer.m in Sources */,
 				B6F5608B25F7240E00AEF26A /* ToolUtils.m in Sources */,
 				B6DD4ECA26241D75006F6208 /* OCCoreAnimationViewController.m in Sources */,
 				B68267272626E75F0074EBF7 /* ChildViewViewController.m in Sources */,
+				B6564C5E2643D28800515466 /* AnotherSwiftFile.swift in Sources */,
 				B6F5607925F0C84300AEF26A /* LRUMutableDictionary.m in Sources */,
 				B6F5606025F0C7DD00AEF26A /* SceneDelegate.m in Sources */,
 				B60DA08F261EEF4500DE466E /* MyView.m in Sources */,
@@ -651,6 +688,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X27Y8T4R4;
 				INFOPLIST_FILE = QuickExampleOC/Info.plist;
@@ -661,6 +699,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liam.QuickExampleOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickExampleOC/QuestionAndAnswer/QuickExampleOC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -670,6 +711,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X27Y8T4R4;
 				INFOPLIST_FILE = QuickExampleOC/Info.plist;
@@ -680,6 +722,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liam.QuickExampleOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickExampleOC/QuestionAndAnswer/QuickExampleOC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -21,6 +21,7 @@
 #import "OCGCDViewController.h"
 #import <UIKit/UIKit.h>
 #import "ChildViewViewController.h"
+#import "QuickExampleOC-Swift.h"
 
 @interface ViewController ()
 
@@ -50,6 +51,8 @@
     [super viewDidLoad];
 //    StartSampleManager *manager = [[StartSampleManager alloc] init];
 //    [manager start];
+    MySwiftClass *swiftClass = [[MySwiftClass alloc] init];
+    [swiftClass start];
 
     self.title = @"Main";
 

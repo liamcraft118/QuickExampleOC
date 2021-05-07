@@ -19,6 +19,8 @@
 		B60DA08A261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60DA088261EDAAA00DE466E /* CCUIViewAndCALayerViewController.xib */; };
 		B60DA08F261EEF4500DE466E /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B60DA08E261EEF4500DE466E /* MyView.m */; };
 		B6564C5E2643D28800515466 /* AnotherSwiftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6564C5D2643D28800515466 /* AnotherSwiftFile.swift */; };
+		B6564C642644CC5C00515466 /* OCAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6564C622644CC5B00515466 /* OCAVPlayerViewController.m */; };
+		B6564C652644CC5C00515466 /* OCAVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6564C632644CC5B00515466 /* OCAVPlayerViewController.xib */; };
 		B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D42D02612ECEC0041D02F /* TouchDebugView.m */; };
 		B68267272626E75F0074EBF7 /* ChildViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68267262626E75F0074EBF7 /* ChildViewViewController.m */; };
 		B6A7845626368E4000246977 /* CSQuestionAndAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A7845526368E4000246977 /* CSQuestionAndAnswer.m */; };
@@ -78,6 +80,9 @@
 		B60DA08D261EEF4500DE466E /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		B60DA08E261EEF4500DE466E /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		B6564C5D2643D28800515466 /* AnotherSwiftFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherSwiftFile.swift; sourceTree = "<group>"; };
+		B6564C612644CC5B00515466 /* OCAVPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAVPlayerViewController.h; sourceTree = "<group>"; };
+		B6564C622644CC5B00515466 /* OCAVPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCAVPlayerViewController.m; sourceTree = "<group>"; };
+		B6564C632644CC5B00515466 /* OCAVPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCAVPlayerViewController.xib; sourceTree = "<group>"; };
 		B65D42CF2612ECEC0041D02F /* TouchDebugView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDebugView.h; sourceTree = "<group>"; };
 		B65D42D02612ECEC0041D02F /* TouchDebugView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDebugView.m; sourceTree = "<group>"; };
 		B68267252626E75F0074EBF7 /* ChildViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildViewViewController.h; sourceTree = "<group>"; };
@@ -194,6 +199,16 @@
 			path = CCUIViewAndCALayer;
 			sourceTree = "<group>";
 		};
+		B6564C602644CC3A00515466 /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B6564C612644CC5B00515466 /* OCAVPlayerViewController.h */,
+				B6564C622644CC5B00515466 /* OCAVPlayerViewController.m */,
+				B6564C632644CC5B00515466 /* OCAVPlayerViewController.xib */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
 		B6AE34212624802900830937 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +240,7 @@
 		B6CF8568261C013900E00CDB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B6564C602644CC3A00515466 /* AVPlayer */,
 				B6D5D0962635668B00ED0619 /* CS */,
 				B6DD4EE4262544E9006F6208 /* OCLock */,
 				B6DD4ECE26242352006F6208 /* OCGCD */,
@@ -498,6 +514,7 @@
 				B6D5D09C263566C100ED0619 /* CSDetailViewController.xib in Resources */,
 				B6CF857D261C6B2C00E00CDB /* OCStructViewController.xib in Resources */,
 				B6F5606825F0C7DF00AEF26A /* Assets.xcassets in Resources */,
+				B6564C652644CC5C00515466 /* OCAVPlayerViewController.xib in Resources */,
 				B60DA066261EA9CD00DE466E /* OCCategoryViewController.xib in Resources */,
 				B6DD4ECB26241D75006F6208 /* OCCoreAnimationViewController.xib in Resources */,
 				B6DD4ED326242362006F6208 /* OCGCDViewController.xib in Resources */,
@@ -529,6 +546,7 @@
 				B6CF857C261C6B2C00E00CDB /* OCStructViewController.m in Sources */,
 				B6AE34252624804C00830937 /* AlgorithmViewController.m in Sources */,
 				B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */,
+				B6564C642644CC5C00515466 /* OCAVPlayerViewController.m in Sources */,
 				B6CF8575261C09A400E00CDB /* Person.m in Sources */,
 				B6D5D09B263566C100ED0619 /* CSDetailViewController.m in Sources */,
 				B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */,

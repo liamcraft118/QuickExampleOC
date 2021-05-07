@@ -84,10 +84,14 @@
  从一般用途来讲，delegate是命令式的，即委托他人做什么事情；而notification是响应式的，即收到了这个通知，我要如何回应。
  本质上来讲，都是对象之间通信的方式，delegate是通过相互引用，调用对象的方法来实现；notification是将自己注册进全局数组中，发送端遍历数组，调用方法来实现。
  5,6. pthread, NSThread, GCD, NSOperation
+ NSOperation中有异步任务时，重写isExecuting和isFinished，在start和main中手动控制isExecuting和isFinished的值。
+ 记得手动触发KVO
+ https://stackoverflow.com/a/33555576/4789773
  7. 如果是串行队列，会死锁；如果是并行队列，会依次执行；
  8. 自旋锁，信号量，互斥锁，NSLock，NSRecursiveLock，NSConditionLock，@syncronized
  避免资源竞争
- 9. GCD group或者利用NSCondition，使用生产者消费者模型
+ 9. GCD group, NSOperation的addDependency
+ 或者利用NSCondition，使用生产者消费者模型
  10. 自旋锁是bool + while，忙等待；信号量是利用lll_futex_wait()让当前线程睡眠，让出睡眠时间。
  11、12、13 不清楚
  14. 静态库：.a、.framework，链接时完整地拷贝到可执行文件中，如果有多份引用，就会有多份拷贝
@@ -103,6 +107,7 @@
  */
 /*
  1、2 性能优化 https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/
+ 高度缓存，异步渲染，避免离屏渲染
  3. javaScriptCore用来解释js代码，ReactJS用来指挥原生组件进行绘制和更新，Bridges用来翻译ReactJS的绘制指令
  4. react native调用原生进行绘制，flutter自己进行绘制
  5.
@@ -261,6 +266,7 @@
  3. -
  4. -
  5. 资源竞争，比如一个线程在遍历数组，另一个线程往数组里面添加/删除数据
+ 执行顺序先后问题
  6. 加锁或者用一个串行队列
  7. "主队列存储要执行的任务，主线程来执行这些任务，他们是一对一的"
  update: 之前的回答有误，主队列的任务一般在主线程上运行，全局队列的任务一般是在子线程中运行，但都有例外。
@@ -294,7 +300,9 @@
  2. retain, release, autorelease
  3. retain时+1，release时-1
  4. A、B是同一个，引用计数为2
+ 这里有错误，引用计数应该为3，copy内部会实例化对象，分配内存，然后autorelease
  5. A、B是不同的对象，引用计数都为1
+ 这里也有错误，A的引用计数为1，B的引用计数为2
  6. 只读，存在Class的class_ro_t中，只有get方法，所以只读。
  7. atomic, readwrite, strong
  8. category是用runtime实现的
@@ -567,7 +575,7 @@
  3. 分配内存缓冲区，将图片数据从磁盘读取到内存中
  在渲染之前，将图片数据解码，这一步发生在主线程中
  然后将解码后的数据交给GPU渲染
- 4. 
+ 4.
  */
 
 /**
@@ -648,3 +656,6 @@
  1. LRU、LFU
  2. APP性能优化，https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/
  */
+
+// 新一轮面试题
+// https://juejin.cn/post/6860888953638256654

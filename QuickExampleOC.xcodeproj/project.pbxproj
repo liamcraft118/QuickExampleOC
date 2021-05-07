@@ -27,6 +27,10 @@
 		B6AE34252624804C00830937 /* AlgorithmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE34232624804C00830937 /* AlgorithmViewController.m */; };
 		B6AE34262624804C00830937 /* AlgorithmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6AE34242624804C00830937 /* AlgorithmViewController.xib */; };
 		B6AE3429262991D200830937 /* MyQuestionAndAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE3428262991D200830937 /* MyQuestionAndAnswer.m */; };
+		B6AE342B264580EF00830937 /* QuestionAnswer1.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE342A264580EF00830937 /* QuestionAnswer1.m */; };
+		B6AE342D264588A100830937 /* OCQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE342C264588A100830937 /* OCQuestion.m */; };
+		B6AE342F2645899D00830937 /* iOSQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE342E2645899D00830937 /* iOSQuestion.m */; };
+		B6AE3431264589C700830937 /* AdvancedQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE3430264589C600830937 /* AdvancedQuestion.m */; };
 		B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C51455261DF4CC005A2264 /* KVCKVOViewController.m */; };
 		B6C51458261DF4CC005A2264 /* KVCKVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C51456261DF4CC005A2264 /* KVCKVOViewController.xib */; };
 		B6CF856E261C05D600E00CDB /* OCMemoryManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF856C261C05D600E00CDB /* OCMemoryManagementViewController.m */; };
@@ -92,6 +96,10 @@
 		B6AE34232624804C00830937 /* AlgorithmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmViewController.m; sourceTree = "<group>"; };
 		B6AE34242624804C00830937 /* AlgorithmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlgorithmViewController.xib; sourceTree = "<group>"; };
 		B6AE3428262991D200830937 /* MyQuestionAndAnswer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyQuestionAndAnswer.m; sourceTree = "<group>"; };
+		B6AE342A264580EF00830937 /* QuestionAnswer1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionAnswer1.m; sourceTree = "<group>"; };
+		B6AE342C264588A100830937 /* OCQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCQuestion.m; sourceTree = "<group>"; };
+		B6AE342E2645899D00830937 /* iOSQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSQuestion.m; sourceTree = "<group>"; };
+		B6AE3430264589C600830937 /* AdvancedQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedQuestion.m; sourceTree = "<group>"; };
 		B6C51454261DF4CC005A2264 /* KVCKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCKVOViewController.h; sourceTree = "<group>"; };
 		B6C51455261DF4CC005A2264 /* KVCKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCKVOViewController.m; sourceTree = "<group>"; };
 		B6C51456261DF4CC005A2264 /* KVCKVOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KVCKVOViewController.xib; sourceTree = "<group>"; };
@@ -311,7 +319,11 @@
 		B6DD4ED7262530B4006F6208 /* QuestionAndAnswer */ = {
 			isa = PBXGroup;
 			children = (
+				B6AE342C264588A100830937 /* OCQuestion.m */,
+				B6AE3430264589C600830937 /* AdvancedQuestion.m */,
+				B6AE342E2645899D00830937 /* iOSQuestion.m */,
 				B6DD4ED8262530F4006F6208 /* QuestionAndAnswer.m */,
+				B6AE342A264580EF00830937 /* QuestionAnswer1.m */,
 				B6D5D09F2635747700ED0619 /* SwiftQuestionAndAnswer.m */,
 				B6A7845526368E4000246977 /* CSQuestionAndAnswer.m */,
 				B6D5D0A3263574F700ED0619 /* SwiftTestDemo.swift */,
@@ -539,6 +551,7 @@
 				B6AE3429262991D200830937 /* MyQuestionAndAnswer.m in Sources */,
 				B6DD4EE0262544E2006F6208 /* OCLockViewController.m in Sources */,
 				B6D5D0A02635747700ED0619 /* SwiftQuestionAndAnswer.m in Sources */,
+				B6AE342B264580EF00830937 /* QuestionAnswer1.m in Sources */,
 				B65D42D12612ECED0041D02F /* TouchDebugView.m in Sources */,
 				B6F5605D25F0C7DD00AEF26A /* AppDelegate.m in Sources */,
 				B60DA089261EDAAA00DE466E /* CCUIViewAndCALayerViewController.m in Sources */,
@@ -552,6 +565,7 @@
 				B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */,
 				B60DA05E261EA1FD00DE466E /* OCRuntimeViewController.m in Sources */,
 				B6DD4ED226242362006F6208 /* OCGCDViewController.m in Sources */,
+				B6AE342F2645899D00830937 /* iOSQuestion.m in Sources */,
 				B6FE5FFD261DB781001A8707 /* OCMessageViewController.m in Sources */,
 				B6F5607F25F0DCDD00AEF26A /* StartSampleManager.m in Sources */,
 				B6F5606E25F0C7DF00AEF26A /* main.m in Sources */,
@@ -562,6 +576,8 @@
 				B68267272626E75F0074EBF7 /* ChildViewViewController.m in Sources */,
 				B6564C5E2643D28800515466 /* AnotherSwiftFile.swift in Sources */,
 				B6F5607925F0C84300AEF26A /* LRUMutableDictionary.m in Sources */,
+				B6AE342D264588A100830937 /* OCQuestion.m in Sources */,
+				B6AE3431264589C700830937 /* AdvancedQuestion.m in Sources */,
 				B6F5606025F0C7DD00AEF26A /* SceneDelegate.m in Sources */,
 				B60DA08F261EEF4500DE466E /* MyView.m in Sources */,
 			);

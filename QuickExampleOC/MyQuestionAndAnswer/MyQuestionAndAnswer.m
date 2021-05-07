@@ -52,3 +52,11 @@
  15. UIWebView、WKWebView中JS的调用时同步还是异步的？
  16. include和import有什么区别？include如何避免多次引用的问题？
  */
+
+/**
+ method_list中存的是什么内容
+ 聊聊MVP和MVVM的区别
+ 聊一聊组件化开发
+ NSString执行copy，返回的是不是同一个对象？
+ delegate和block的区别？
+ */

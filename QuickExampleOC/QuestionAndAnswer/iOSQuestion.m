@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-##pragma mark - iOS
+#pragma mark - iOS
 /**
  4. UIView 和 CALayer的关系和区别
  5. UIView 和 CALayer在动画上的区别
@@ -65,13 +65,18 @@
  1. 常见的crash
  2. 怎么处理这些crash
  
- 1、Block是如何实现的？Block对应的数据结构是什么样子的？__block的作用是什么？它对应的数据结构又是什么样子的？
  2、GCD中的Block是在堆上还是栈上？
  3、NSCoding协议是干什么用的？
  4、KVO的实现原理
  5、NSOperation有哪些特性，比着GCD有哪些优点，它有哪些API？
  6、NSNotificaiton是同步还是异步的，如果发通知时在子线程，接收在哪个线程？
- 
+ 6. 手指触摸屏幕后系统都做了哪些事情
+ 7. Runloop是啥，为啥要设计runloop，runloop和线程的关系
+
+ 6、NSNotificaiton是同步还是异步的，如果发通知时在子线程，接收在哪个线程？
+
+ 3、NSCoding协议是干什么用的？
+
  
  
  */

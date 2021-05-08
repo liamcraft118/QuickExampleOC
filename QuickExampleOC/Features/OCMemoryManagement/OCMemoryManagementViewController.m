@@ -5,6 +5,8 @@
 //  Created by Liam on 2021/4/6.
 //
 
+
+
 /**
  OC的内存管理
  
@@ -18,6 +20,23 @@
 #import "OCMemoryManagementViewController.h"
 #import "ToolUtils.h"
 #import "Person.h"
+
+@interface YZPerson : NSObject
+@property (nonatomic ,assign) int age;
+@end
+
+
+@implementation YZPerson
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
+
+@end
+
+typedef void (^YZBlock)(void);
+
 
 @interface OCMemoryManagementViewController ()
 
@@ -61,6 +80,26 @@
     LMLOG(a)
     LMLOG(b)
     LMLOG(c)
+    
+    @autoreleasepool {
+        
+        YZBlock block;
+        
+        {
+            YZPerson *person = [[YZPerson alloc]init];
+            person.age = 10;
+            
+            block = ^{
+                NSLog(@"---------%d", person.age);
+            };
+            
+             NSLog(@"block.class = %@, %@",[block class], block);
+        }
+        
+        NSLog(@"block销毁");
+
+    }
+    
 }
 
 /**

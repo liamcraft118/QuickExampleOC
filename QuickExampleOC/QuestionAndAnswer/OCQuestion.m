@@ -100,40 +100,118 @@
  */
 
 
+// runtime基础
 /**
- // runtime
  1. 聊聊iOS中的rumtime
  OC是动态语言，它在运行时可以动态的创建类、对象，进行消息传递、转发。所以需要一套机制来保证这样的特性能够正常运行，runtime就是这样的一套机制。
- 在runtime中，
  
- 8. category相关，category是怎么实现的
- 9. category的结构
- 10. category中的方法会覆盖原来类的方法吗
- 11. category中怎么区分开类方法和实例方法的
- 12. category的方法是怎么插入到类(元类)对象方法列表中的
- 1. category的实现原理
- 3. ISA指针
- 4. 64位后怎么获取ISA指针
- 2. A调用了B方法都做了什么事情
- 5. runloop、runtime工作中有接触过嘛
- 2. runtime（什么是runtime，为啥要有runtime，你用runtime做过什么事情）
- 3. 怎么进行方法的交换
- 4. +load在什么时候调用的，对启动的影响
- 1. 分类和extension区别
- 2. 分类的实现机制
- 3. 分类同名方法的调用
- 4. 关联对象，策略有哪些，关联对象的key为啥要用static修饰（这个没有get到点）
- 4. 你理解的id 以及 id 和 void *区别
- 5. 函数指针和指针函数的区别
- 13. OC 消息发送机制（提到了isa、类对象，引出下面问题）
- 14. 写下类的结构
- 15. isa在32为和64位的区别
- 16. 什么是元类为啥要这么设计
- 17. category 和 extension 的区别
- 18. +load方法
- iOS中+load 和 initialized区别
- 8. KVO的实现原理
+ runtime中的数据结构, objc_object和objc_class，其中objc_object中包含一个isa_t isa指针，在64为系统中,isa_t是一个union，我们暂时把理解为一个指向Class的普通指针。
+ objc_class继承于objc_object，除此之外还包含Class superClass; cache_t cache; class_data_bits_t bits;
+ Class为指向objc_class的指针，id为指向objc_object的指针。
+ 
+ superClass
+ 一个对象的实例（即objc_object)的isa为objc_class
+ 一个类(即objc_class)的isa为元类，类的superClass为它的父类
+ NSObject为类最终的根类，元类的最终的根类为root元类
+ root元类的isa为NSObject，形成一个闭环
+ 
+ cache
+ cache_t可增量扩展的哈希表结构, key为无符号的长整型，value为IMP
+ cache_t本质是一个结构体，里面包函数bucket_t的数组，mask代表缓存bucket的总数，occupied代表实际占用的数量
+ 
+ bits
+ class_data_bits_t是对class_rw_t的封装，class_rw_t包括class_ro_t, protocols, properties, methods，
+ class_ro_t包括protocols, properties, methods, name, ivars,
+ class_ro_t是编译时确定的协议、属性、方法、类名和成员变量,
+ class_rw_t中的数据是运行时添加进来的，先添加分类中的协议、属性、方法，再添加clas_ro_t,
 
+ method_t
+ method_t是结构体，其中包含SEL name; const char *types; IMP imp;
+ methods是数组，其中包含了method_t，其中types是不可变字符类型指针，代表函数的组成结构，一般为"v@:"，"v"代表返回值为void，"@"代表传入的第一个参数为对象（self)，":"代表传入SEL
+ 
+ 2. 消息转发
+ 根据实例对象、类对象、元类对象的关系图，我们可以知道：
+ 类对象存储实例方法列表等信息
+ 元类对象存储类方法列表等信息
+ 类对象和元类对象都是objc_class，都继承于objc_object，都有isa指针，
+ 所以实例对象可以通过isa找到类对象，进而访问类对象存储的数据，类对象也可以通过isa找到元类对象，进而访问元类对象存储的数据。
+ 
+ 有了以上基础，下面来看看实例对象调用实例方法的过程：
+ 缓存查找：根据SEL计算出哈希值，从哈希表中查找IMP返回给调用方。
+ 当前类查找：遍历methods，找到与SEL相匹配的IMP，然后添加到cache中
+ 父类逐级查找：先查看父类的cache，再查看methods，找到IMP之后，添加到cache中
+ 如果还没有找到，就会走消息转发流程resolvedInstanceMethod, forwardingTargetForSelector, methodSignagureForSelector, forwardInvocation
+ 
+ method-swizzing
+ @dynamic
+
+ ref: https://www.jianshu.com/p/c339d331e23e
+ 
+ 3. category的结构？如何区分类方法和实例方法？方法是如何加入到对象方法列表中的？实现原理？同名方法的调用？
+ category的数据结构：name, cls, instanceMethods, classMethods, protocols, instanceProperties;
+ 编译时，会构建category结构体，保存在DATA数据段，用于运行时category的加载。
+ 运行时，会先将category的数据加载到类中，再添加类本身的数据。
+
+ */
+
+// runtime实践
+ /**
+  1. [self class]和[super class]返回的是同一个类吗？
+  一般而言，class这个方法，NSObject的子类都没有重写，所以最终调用的是它们的根类（即NSObject）中的class方法。
+  因此结果一定是相同的，返回当前类的类名。
+  
+  2. isKindOfClass和isMemberOfClass的区别？
+  isKindOfClass判断是否是某个类或者是这个类的子类
+  isMemberOfClass判断是否是某个类
+
+  3. category和extension的区别？
+  extension的内容在编译期时决定的，一般用来隐藏类的私有信息，必须要有源码才能为一个类添加extension，可以添加实例变量。
+  category中的内容是在运行时被添加到类中的，可以为已存在的类动态添加方法，不能添加实例变量。
+
+  4. ISA指针是什么？64位后怎么获取ISA指针？
+  TBD
+  
+  5. A调用了B方法都做了什么事情
+  方法调用以及消息转发
+  
+  6. 你用runtime做过什么事情？
+  UITableView的空页面，利用setDataSource获取dataSource对应的类，然后hook方法numberOfRow，根据返回值数量，添加或者移除空页面。
+  
+  7. 怎么进行方法的交换
+  method swizzing
+  
+  8. +load在什么时候调用的，对启动的影响？和initialize的区别？
+  在类被加载到runtime的时候被调用，如果在+load中做了太多事情，就会明显地影响到启动的速度。
+  initialize方法在对象的第一个方法被调用时执行，执行顺序是父类->当前类->category
+  
+  9. 关联对象，策略有哪些，关联对象的key为啥要用static修饰（这个没有get到点）
+  assign, copy, copy_nonatomic, retain, retain_nonatomic
+  static代表这个key在编译时就能确定，取地址就能获取到不可变的空类型指针，满足参数的定义
+  
+  10. id和void *区别
+  id是指向objc_object的指针，一般而言也就是指向NSObject的指针，可以向id对象进行任意方法调用，运行时会执行或者报错；
+  void *表示指向任意类型的指针，该指针指向一块内存地址，但不清楚这块内存地址对应的是什么内容；
+  
+  11. 函数指针和指针函数的区别
+  函数指针是指指向一个函数地址的指针，指针函数是指返回值为一个指针的函数。
+  
+  12. OC消息发送机制？类的结构？isa32位和64位的区别？为什么元类要这么设计？
+  消息发送与转发。类的结构，继承于objc_object，包括Class superclass; cache_t cache; class_data_bits_t bits;
+  32位的isa指针指向Class的内存地址，
+  64位的isa指针是一个union，用33位保存了Class的内存地址，其他位作为标志位，与第三位为0的ISA_MASK进行与操作，会获得Class的真实地址
+  ref: https://juejin.cn/post/6844903993961873415
+  ref: https://halfrost.com/objc_runtime_isa_class/
+  
+  13. 如果我们调用一个类方法，没有对应的实现，但是有同名的实例方法实现，会不会发生崩溃？会不会产生实际的调用？
+  如果是NSObject中有同名的实例方法，不会产生崩溃，会产生实际的调用。
+  类方法会遍历元类的方法列表，以及元类父类的方法列表，直到根元类，直到根元类的父类，即NSObject类，这时候就会遍历NSObject的方法列表来进行响应。
+  
+  14. KVO的实现原理
+  运行时，动态生成一个新的类Notify_Foo继承于Foo，重写需要观察的属性的set方法。在set方法中调用willChangeValueForKey:和didChangeValueForKey:
+  在didChangeValueForKey:中会调用observerValueForKeyPath:方法
+  */
+
+/**
  // 多线程
  5. 多线程相关
  6. iOS中有哪些多线程技术

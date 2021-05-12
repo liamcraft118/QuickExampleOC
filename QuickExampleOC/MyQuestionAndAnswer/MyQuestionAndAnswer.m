@@ -60,3 +60,15 @@
  NSString执行copy，返回的是不是同一个对象？
  delegate和block的区别？
  */
+
+/**
+ OC支持重载吗？为什么？如果让你设计，如何能够让OC支持重载？
+ 如何只让类的一部分对象中的两个方法进行方法交换？
+ 利用运行时创建中间类继承这个类，然后让这部分对象的isa指针指向这个类，交换这个类中的方法。
+ 如何设计一个模块以达到封装性和扩展性？
+ 你的项目中遇到过最难的bug是如何解决的？
+ KVO如何写的？原理是什么？
+ performSelector:afterDelay在子线程中能执行吗？
+ Block中不用写weakSelf的有哪些例子？
+ GCD、enmuratingUsingBlock、[UIView animationWith]
+ */

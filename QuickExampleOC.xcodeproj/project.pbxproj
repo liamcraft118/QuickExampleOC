@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95AFE14D27A156210016D56C /* StrategyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AFE14C27A156210016D56C /* StrategyPattern.swift */; };
 		B60DA05E261EA1FD00DE466E /* OCRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60DA05C261EA1FD00DE466E /* OCRuntimeViewController.m */; };
 		B60DA05F261EA1FD00DE466E /* OCRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60DA05D261EA1FD00DE466E /* OCRuntimeViewController.xib */; };
 		B60DA065261EA9CD00DE466E /* OCCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60DA063261EA9CD00DE466E /* OCCategoryViewController.m */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95AFE14C27A156210016D56C /* StrategyPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyPattern.swift; sourceTree = "<group>"; };
 		B60DA05B261EA1FD00DE466E /* OCRuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCRuntimeViewController.h; sourceTree = "<group>"; };
 		B60DA05C261EA1FD00DE466E /* OCRuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRuntimeViewController.m; sourceTree = "<group>"; };
 		B60DA05D261EA1FD00DE466E /* OCRuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OCRuntimeViewController.xib; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95AFE14827A1523D0016D56C /* DesignPattern */ = {
+			isa = PBXGroup;
+			children = (
+				95AFE14C27A156210016D56C /* StrategyPattern.swift */,
+			);
+			path = DesignPattern;
+			sourceTree = "<group>";
+		};
 		B60DA061261EA7A500DE466E /* OCCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +381,7 @@
 		B6F5605A25F0C7DD00AEF26A /* QuickExampleOC */ = {
 			isa = PBXGroup;
 			children = (
+				95AFE14827A1523D0016D56C /* DesignPattern */,
 				B6AE34212624802900830937 /* Algorithm */,
 				B6DD4ED7262530B4006F6208 /* QuestionAndAnswer */,
 				B6AE34272629919F00830937 /* MyQuestionAndAnswer */,
@@ -561,6 +572,7 @@
 				B6EC18AB261177AC008A980E /* RunloopSample.m in Sources */,
 				B6564C642644CC5C00515466 /* OCAVPlayerViewController.m in Sources */,
 				B6CF8575261C09A400E00CDB /* Person.m in Sources */,
+				95AFE14D27A156210016D56C /* StrategyPattern.swift in Sources */,
 				B6D5D09B263566C100ED0619 /* CSDetailViewController.m in Sources */,
 				B6C51457261DF4CC005A2264 /* KVCKVOViewController.m in Sources */,
 				B60DA05E261EA1FD00DE466E /* OCRuntimeViewController.m in Sources */,

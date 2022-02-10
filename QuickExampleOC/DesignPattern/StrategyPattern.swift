@@ -144,5 +144,62 @@ import Foundation
  */
 
 class StrategyPattern {
-    
+}
+
+//protocol ProductA {}
+//protocol ProductB {}
+//class ProductA1: ProductA {}
+//class ProductB1: ProductB {}
+//class ProductA2: ProductA {}
+//class ProductB2: ProductB {}
+//class Client {
+//    init(productFactory: ProductFactory) { self.productFactory = productFactory }
+//    var productFactory: ProductFactory
+//    func operation() {
+//        let a = productFactory.createProductA()
+//        let b = productFactory.createProductB()
+//        doSomething(with: a, productB: b)
+//    }
+//    func doSomething(with productA: ProductA, productB: ProductB) {}
+//}
+//protocol ProductFactory {
+//    func createProductA() -> ProductA
+//    func createProductB() -> ProductB
+//}
+//class ProductFactory1 {
+//    func createProductA() -> ProductA { return ProductA1() }
+//    func createProductB() -> ProductB { return ProductB1() }
+//}
+//class ProductFactory2 {
+//    func createProductA() -> ProductA { return ProductA2() }
+//    func createProductB() -> ProductB { return ProductB2() }
+//}
+
+protocol ProductA {}
+protocol ProductB {}
+class ProductA1: ProductA {}
+class ProductB1: ProductB {}
+class ProductA2: ProductA {}
+class ProductB2: ProductB {}
+class Client {
+    init(productFactory: ProductFactory) { self.productFactory = productFactory }
+    var productFactory: ProductFactory
+    func operation() {
+        let a = productFactory.createProductA()
+        let b = productFactory.createProductB()
+        doSomething(with: a, productB: b)
+    }
+    func doSomething(with productA: ProductA, productB: ProductB) {}
+}
+protocol ProductFactory {
+    func createProductA() -> ProductA
+    func createProductB() -> ProductB
+}
+class ProductFactory1 {
+    func createProductA() -> ProductA { return ProductA1() }
+    func createProductB() -> ProductB { return ProductB1() }
+}
+class ProductFactory2 {
+    func createProductA() -> ProductA { return ProductA2() }
+    func createProductB() -> ProductB { return ProductB2() }
 }

@@ -6,6 +6,7 @@
 //
 
 #import "OCGCDViewController.h"
+#import "OCRuntimeViewController.h"
 
 /**
  GCD
@@ -26,6 +27,16 @@
  https://www.neroxie.com/2019/01/22/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3GCD%E4%B9%8Bdispatch-queue/
  */
 
+@interface Sark : NSObject
+@property (nonatomic, copy) NSString *name;
+- (void)speak;
+@end
+@implementation Sark
+- (void)speak {
+    NSLog(@"my name's %@", self);
+}
+@end
+
 @interface OCGCDViewController ()
 
 @end
@@ -34,6 +45,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    id number = [OCGCDViewController alloc];
+//    id a = [number initWithName:@"aa"];
+//    NSLog(a);
+    
+    id number = [NSNumber alloc];
+    id a = [number initWithBool:YES];
+    
 //    dispatch_queue_attr_t attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT, QOS_CLASS_BACKGROUND, 0);
 //    dispatch_queue_t queue = dispatch_queue_create("myQueue", attr);
 ////    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
@@ -43,10 +62,65 @@
 //        });
 //    }
     
-    dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
-    dispatch_sync(queue, ^{
-        NSLog(@"%@", [NSThread currentThread]);
-    });
+//    dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
+//    dispatch_sync(queue, ^{
+//        NSLog(@"%@", [NSThread currentThread]);
+//    });
+    
+
+//    [super viewDidLoad];
+//    id cls = [Sark class];
+//    void *obj = &cls;
+//    [(__bridge id)obj speak];
+    
+//    NSLog(@"ViewController = %@ , 地址 = %p", self, &self);
+//
+//        NSString *myName = @"halfrost";
+//
+//        id cls = [Sark class];
+//        NSLog(@"Sark class = %@ 地址 = %p", cls, &cls);
+//
+//        void *obj = &cls;
+//        NSLog(@"Void *obj = %@ 地址 = %p", obj,&obj);
+//
+//        [(__bridge id)obj speak];
+//
+//        Sark *sark = [[Sark alloc]init];
+//        NSLog(@"Sark instance = %@ 地址 = %p",sark,&sark);
+//
+//        [sark speak];
+    
+//    dispatch_queue_t queue = dispatch_queue_create("mtest", DISPATCH_QUEUE_CONCURRENT);
+//    for (int i = 0; i < 100; i++) {
+//        dispatch_async(queue, ^{
+//            NSLog(@"%d", i);
+//        });
+//    }
+//
+//    dispatch_sync(queue, ^{
+//        NSLog(@"101");
+//    });
 }
+
+@end
+
+@interface LMNumber : NSObject
+
+@end
+
+@interface LMChildNumber : LMNumber
+
+@end
+
+@implementation LMNumber
+
+- (instancetype)initWithName:(NSString *)name {
+    return [[LMChildNumber alloc] init];
+}
+
+@end
+
+
+@implementation LMChildNumber
 
 @end
